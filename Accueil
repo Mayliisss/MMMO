@@ -1,2 +1,27 @@
 <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sportify.css">
+</head>
+<body>
 
+<div id="mySidenav" class="sidenav">
+  <a id="closeBtn" href="#" class="close">×</a>
+  <ul>
+    <li><a href="#">Tout parcourir</a></li>
+    <li><a href="#">Recherche</a></li>
+    <li><a href="#">Rendez-vous</a></li>
+    <li><a href="#">Votre compte</a></li>
+  </ul>
+</div>
+
+<a href="#" id="openBtn">
+  <span class="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</a>
+<script src="sportify.js"></script>
+</BODY>
+</html>
