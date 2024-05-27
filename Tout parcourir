@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+	<link href="prime.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tout parcourir</title>
+</head>
+<body>
+    <div>
+//mettre logo 
+        <img src=".gif" alt="tout parcourir" height="100" width="300"> 
+    </div>
+
+
+    <!-- Footer avec navigation -->
+    <footer>
+        <div>
+            <a href="accueil.html">retour à l'accueil</a> | 
+        </div>
+        <div>
+            coordonnées?
+        </div>
+    </footer>
+</body>
+</html>
 
