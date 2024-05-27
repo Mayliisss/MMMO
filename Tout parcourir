@@ -9,33 +9,40 @@
 //mettre logo 
         <img src=".gif" alt="tout parcourir" height="100" width="300"> 
     </div>
+<hr>
 	<details>
         <summary>Activités sportives</summary>
-		<p> <a href="musculation.html">musculation</a> </p>
-		<p> <a href="fitness.html">fitness</a> </p>
-		<p> <a href="biking.html">biking</a> </p>
-		<p> <a href="cardio.html">cardio-training</a> </p>
-		<p> <a href="coursco.html">Cours collectif</a> </p>		
+		<ul>
+		<li> <a href="musculation.html">musculation</a> </li>
+		<li> <a href="fitness.html">fitness</a> </li>
+		<li> <a href="biking.html">biking</a> </li>
+		<li> <a href="cardio.html">cardio-training</a> </li>
+		<li> <a href="coursco.html">Cours collectif</a> </li>		
+		</ul>
     </details>
 
 	<details>
         <summary>Sports de compétition</summary>
-		<p> <a href="basket.html">basket</a> </p>
-		<p> <a href="football.html">football</a> </p>
-		<p> <a href="rugby.html">rugby</a> </p>
-		<p> <a href="tennis.html">tennis</a> </p>
-		<p> <a href="natation.html">natation</a> </p>	
-		<p> <a href="plongeon.html">plongeon</a> </p>		
+		<ul>
+		<li> <a href="basket.html">basket</a> </li>
+		<li> <a href="football.html">football</a> </li>
+		<li> <a href="rugby.html">rugby</a> </li>
+		<li> <a href="tennis.html">tennis</a> </li>
+		<li> <a href="natation.html">natation</a> </li>	
+		<li> <a href="plongeon.html">plongeon</a> </li>		
+		</ul>
     </details>
 
 	<details>
         <summary>Salle de sports Omnes</summary>
-		<p> <a href="regles.html">règles d'utilisation des machines</a> </p>
-		<p> <a href="horaire.html">horaire de la gym</a> </p>
-		<p> <a href="questionnaire.html">Si vous avez une question :)</a> </p>
-
+		<ul>
+		<li> <a href="regles.html">règles d'utilisation des machines</a> </li>
+		<li> <a href="horaire.html">horaire de la gym</a> </li>
+		<li> <a href="questionnaire.html">Si vous avez une question :)</a> </li>
+		</ul>
     </details>
 
+<hr>
 
     <!-- Footer avec navigation -->
     <footer>
