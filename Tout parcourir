@@ -9,6 +9,32 @@
 //mettre logo 
         <img src=".gif" alt="tout parcourir" height="100" width="300"> 
     </div>
+	<details>
+        <summary>Activités sportives</summary>
+		<p> <a href="musculation.html">musculation</a> </p>
+		<p> <a href="fitness.html">fitness</a> </p>
+		<p> <a href="biking.html">biking</a> </p>
+		<p> <a href="cardio.html">cardio-training</a> </p>
+		<p> <a href="coursco.html">Cours collectif</a> </p>		
+    </details>
+
+	<details>
+        <summary>Sports de compétition</summary>
+		<p> <a href="basket.html">basket</a> </p>
+		<p> <a href="football.html">football</a> </p>
+		<p> <a href="rugby.html">rugby</a> </p>
+		<p> <a href="tennis.html">tennis</a> </p>
+		<p> <a href="natation.html">natation</a> </p>	
+		<p> <a href="plongeon.html">plongeon</a> </p>		
+    </details>
+
+	<details>
+        <summary>Salle de sports Omnes</summary>
+		<p> <a href="regles.html">règles d'utilisation des machines</a> </p>
+		<p> <a href="horaire.html">horaire de la gym</a> </p>
+		<p> <a href="questionnaire.html">Si vous avez une question :)</a> </p>
+
+    </details>
 
 
     <!-- Footer avec navigation -->
