@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<title>Sportify</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="sportify.css">
 </head>
@@ -22,6 +23,121 @@
     <span></span>
   </span>
 </a>
+
+<div class="divScore" id="scoreDiv">
+<table border="0">
+    <tr>
+        <td valign="middle">
+            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divUserContainer');" />
+        </td>
+    </tr>
+</table>
+<div class="divThemeContainer" id="divUserContainer">
+    <div class="divThemeHeader">
+        <table width="100%">
+            <tr>
+                <td align="left"><b>Profil</b></td>
+                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
+            </tr>
+        </table>
+		
+		
+		
+		
+    </div>
+    <div class="divThemeBody">
+        <form id="loginForm" action="login.php" method="post">
+            <!-- Check if user is logged in -->
+            <img src="img/avatar/userGray.png" width="38"/>
+            <br>Tu es connecté en tant que <b>Utilisateur</b><br>
+            <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Changer</button>
+            <div id="formUser" style="display:none;">
+                <br>Connecte-toi ou crée un nouveu compte !<br>
+                <label for="username">Pseudo (3-10) :</label>
+                <input type="text" id="username" name="username" pattern=".{3,10}" required>
+                <br>
+                <label for="password">Password (3-10) :</label>
+                <input type="password" id="password" name="password" pattern=".{3,10}" required>
+                <br>
+                <div class="divThemeBoxChoice">
+                    <!-- Avatar selection loop -->
+                    <label>
+                        <img src='img/avatar/1.png' width="50">
+                        <input type="radio" name="avatar" value="1" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/2.png' width="50">
+                        <input type="radio" name="avatar" value="2" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/3.png' width="50">
+                        <input type="radio" name="avatar" value="3" required>
+                    </label>
+                    <!-- Add more avatar options as needed -->
+                </div>
+                <button type="button" class="MonButton" onclick="submitForm()">Login</button>
+            </div>
+        </form>
+        <script>
+		    function afficherDiv(button, divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+			
+			function afficherDivModal(divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+	
+            function submitForm() {
+                // Récupérer les valeurs du formulaire
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                var avatar = document.querySelector("input[name='avatar']:checked").value;
+
+                // Vérifier si les champs sont bien renseignés
+                if (!avatar) {
+                    alert("Veuillez choisir un avatar !");
+                    return;
+                }
+
+                // Vérifier la taille du nom d'utilisateur
+                if (username.length < 3 || username.length > 10) {
+                    alert("Le pseudo doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Vérifier la taille du mot de passe
+                if (password.length < 3 || password.length > 10) {
+                    alert("Le mot de passe doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Envoyer les données au script PHP via AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "login.php",
+                    data: { username: username, password: password, avatar: avatar },
+                    success: function(response) {
+                        // Afficher la réponse du serveur (peut être un message de succès ou d'erreur)
+                        alert(response);
+                        window.location.href = "";
+                    }
+                });
+            }
+        </script>
+    </div>
+</div>
+</div>
+
 <script src="sportify.js"></script>
 </BODY>
 </html>
