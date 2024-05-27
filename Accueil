@@ -138,8 +138,17 @@
 </div>
 </div>
 <center>
-		<h3>mettre évènement de la semaine ici!</h3>
+		<h3>mettre évènement de la semaine ici! + photo (à faire carroussel)</h3>
 </center>
+    <!-- Footer -->
+    <footer>
+        <div>
+          mettre coordonnées ici!
+        </div>
+        <div>
+            mettre ggl maps ici!
+        </div>
+    </footer>
 <script src="sportify.js"></script>
 </BODY>
 </html>
