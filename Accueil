@@ -50,13 +50,13 @@
             <!-- Check if user is logged in -->
             <img src="img/avatar/userGray.png" width="38"/>
             <br>Tu es connecté en tant que <b>Utilisateur</b><br>
-            <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Changer</button>
+            <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
             <div id="formUser" style="display:none;">
-                <br>Connecte-toi ou crée un nouveu compte !<br>
-                <label for="username">Pseudo (3-10) :</label>
+                <br>Connecte-toi !<br>
+                <label for="username">Nom d'utilisateur (3-10) :</label>
                 <input type="text" id="username" name="username" pattern=".{3,10}" required>
                 <br>
-                <label for="password">Password (3-10) :</label>
+                <label for="password">Mot de passe (3-10) :</label>
                 <input type="password" id="password" name="password" pattern=".{3,10}" required>
                 <br>
                 <div class="divThemeBoxChoice">
