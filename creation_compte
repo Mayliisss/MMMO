@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="css_creation_compte.css" rel="stylesheet" type="text/css"/>
+
+    <title>Création d'un compte</title>
+    
+</head>
+<body>
+
+    <!--entete, pas besoin de copier on prendra le code autre part -->
+    <div>
+        <!-- mettre logo -->
+        <img src=".gif" alt="tout parcourir" height="100" width="300"> 
+    </div>
+
+    <hr>
+    <h1>Création de votre compte client</h1>
+    <p>Merci de remplir toutes les cases suivantes pour créer votre compte et accéder à nos services exclusifs. Assurez-vous que toutes les informations fournies sont correctes.</p>
+
+    <form method="post">
+        <table border="1">
+            <tr>
+                <td>Prenom</td>
+                <td><input type="text" name="Prenom" required></td>
+            </tr>
+
+            <tr>
+                <td>Nom</td>
+                <td><input type="text" name="Nom" required></td>
+            </tr>
+
+            <tr>
+                <td>Email étudiant</td>
+                <td><input type="email" name="Email" required></td>
+            </tr>
+
+            <tr>
+                <td>Numéro étudiant</td>
+                <td><input type="text" name="Numero_etudiant" required></td>
+            </tr>
+
+            <tr>
+                <td>Adresse</td>
+                <td><input type="text" name="Adresse" required></td>
+            </tr>
+
+            <tr>
+                <td>Avatar</td>
+                <td>
+                    <div class="avatar-selection">
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar1.png" required>
+                            <img src="avatar/avatar1.png" alt="Avatar 1">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar2.png">
+                            <img src="avatar/avatar2.png" alt="Avatar 2">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar3.png">
+                            <img src="avatar/avatar3.png" alt="Avatar 3">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar4.png">
+                            <img src="avatar/avatar4.png" alt="Avatar 4">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar5.png">
+                            <img src="avatar/avatar5.png" alt="Avatar 5">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar6.png">
+                            <img src="avatar/avatar6.png" alt="Avatar 6">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar7.png.png">
+                            <img src="avatar/avatar7.png" alt="Avatar 7">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="8.png">
+                            <img src="avatar/avatar8.png" alt="Avatar 8">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar9.png">
+                            <img src="avatar/avatar9.png" alt="Avatar 9">
+                        </label>
+                        <label>
+                            <input type="radio" name="Avatar" value="avatar/avatar10.png">
+                            <img src="avatar/avatar10.png" alt="Avatar 10">
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="button1" value="Valider" formaction="ajouter_compte.php">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
+    <!-- Footer avec navigation -->
+    <footer>
+        <div>
+            <a href="accueil.html">retour à l'accueil</a> | 
+        </div>
+        <div>
+            coordonnées?
+        </div>
+    </footer>
+</body>
+</html>
