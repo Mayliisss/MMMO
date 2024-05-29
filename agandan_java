@@ -1,0 +1,66 @@
+const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+const daysOfWeek = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+let currentDate = new Date();
+let today = new Date();
+
+function updateCalendar() {
+    const monthName = monthNames[currentDate.getMonth()];
+    const yearNumber = currentDate.getFullYear();
+    document.getElementById("month-name").textContent = monthName;
+    document.getElementById("year-number").textContent = yearNumber;
+
+    const agendaBody = document.getElementById("agenda-body");
+    agendaBody.innerHTML = ""; // Clear existing rows
+
+    // Calculer les dates pour chaque jour de la semaine
+    const startOfWeek = getStartOfWeek(currentDate);
+    const dateRow = document.getElementById("date-row");
+    dateRow.innerHTML = "<th></th>"; // Clear existing dates and add empty cell for time column
+
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(startOfWeek);
+        date.setDate(startOfWeek.getDate() + i);
+        const dateCell = document.createElement("th");
+
+        // Ajouter la classe 'current-date' si la date correspond à la date actuelle
+        if (date.toDateString() === today.toDateString()) {
+            dateCell.classList.add("current-date");
+        }
+
+        dateCell.textContent = `${date.getDate()}/${date.getMonth() + 1}`;
+        dateRow.appendChild(dateCell);
+    }
+
+    for (let hour = 8; hour <= 20; hour++) {
+        const row = document.createElement("tr");
+        const hourCell = document.createElement("td");
+        hourCell.textContent = `${hour}:00`;
+        row.appendChild(hourCell);
+
+        for (let day = 0; day < 7; day++) {
+            const cell = document.createElement("td");
+            row.appendChild(cell);
+        }
+        agendaBody.appendChild(row);
+    }
+}
+
+function getStartOfWeek(date) {
+    const startOfWeek = new Date(date);
+    const day = startOfWeek.getDay();
+    const diff = startOfWeek.getDate() - day + (day === 0 ? -6 : 1); // Adjust when day is sunday
+    startOfWeek.setDate(diff);
+    return startOfWeek;
+}
+
+document.getElementById("prev").addEventListener("click", () => {
+    currentDate.setDate(currentDate.getDate() - 7);
+    updateCalendar();
+});
+
+document.getElementById("next").addEventListener("click", () => {
+    currentDate.setDate(currentDate.getDate() + 7);
+    updateCalendar();
+});
+
+updateCalendar(); // Initial call to set up the calendar
