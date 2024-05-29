@@ -1,0 +1,156 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #8A2BE2; /* Violet clair */
+    padding: 10px 15px;
+    border: 2px solid #8A2BE2; /* Violet clair */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #8A2BE2; /* Violet clair */
+    border-color: #551A8B; /* Violet plus foncé */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Entête */
+div img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Titres et paragraphes */
+h1 {
+    text-align: center;
+    color: #8A2BE2; /* Violet clair */
+    margin: 20px 0;
+}
+
+p {
+    text-align: center;
+    margin: 0 20px 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Formulaire de création de compte */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+}
+
+form input[type="submit"] {
+    background-color: #8A2BE2; /* Violet clair */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+form input[type="submit"]:hover {
+    background-color: #551A8B; /* Violet plus foncé */
+}
+
+/* Sélection d'avatar */
+.avatar-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.avatar-selection label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-selection input[type="radio"] {
+    display: none;
+}
+
+.avatar-selection img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.avatar-selection input[type="radio"]:checked + img {
+    border: 2px solid #8A2BE2; /* Violet clair */
+}
+
+/* Pied de page */
+footer {
+    background: #8A2BE2; /* Violet clair */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer div {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #fff;
+    color: #8A2BE2; /* Violet clair */
+    border-color: #8A2BE2; /* Violet clair */
+}
