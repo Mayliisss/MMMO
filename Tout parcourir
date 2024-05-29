@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-	<link href="css.css" rel="stylesheet" type="text/css"/>
+	<link href="css_tout_parcourir.css" rel="stylesheet" type="text/css"/>
     <title>tout parcourir</title>
 </head>
 <body>
+
+	<!--entete, pas besoin de copier on prendra le code autre part -->
     <div>
 //mettre logo 
         <img src=".gif" alt="tout parcourir" height="100" width="300"> 
     </div>
+
+
 <hr>
 	<details>
         <summary>Activités sportives</summary>
 		<ul>
-		<li> <a href="musculation.html">musculation</a> </li>
-		<li> <a href="fitness.html">fitness</a> </li>
-		<li> <a href="biking.html">biking</a> </li>
-		<li> <a href="cardio.html">cardio-training</a> </li>
-		<li> <a href="coursco.html">Cours collectif</a> </li>		
+		<li> <a href="musculation.html">Musculation</a> </li>
+		<li> <a href="fitness.html">Fitness</a> </li>
+		<li> <a href="biking.html">Biking</a> </li>
+		<li> <a href="cardio.html">Cardio-Training</a> </li>
+		<li> <a href="coursco.html">Cours Collectif</a> </li>		
 		</ul>
-    </details>
+	</details>
 
 	<details>
         <summary>Sports de compétition</summary>
 		<ul>
-		<li> <a href="basket.html">basket</a> </li>
-		<li> <a href="football.html">football</a> </li>
-		<li> <a href="rugby.html">rugby</a> </li>
-		<li> <a href="tennis.html">tennis</a> </li>
-		<li> <a href="natation.html">natation</a> </li>	
-		<li> <a href="plongeon.html">plongeon</a> </li>		
+		<li> <a href="basket.html">Basket</a> </li>
+		<li> <a href="football.html">Football</a> </li>
+		<li> <a href="rugby.html">Rugby</a> </li>
+		<li> <a href="tennis.html">Tennis</a> </li>
+		<li> <a href="natation.html">Natation</a> </li>	
+		<li> <a href="plongeon.html">Plongeon</a> </li>		
 		</ul>
-    </details>
+	</details>
 
 	<details>
         <summary>Salle de sports Omnes</summary>
 		<ul>
-		<li> <a href="regles.html">règles d'utilisation des machines</a> </li>
-		<li> <a href="horaire.html">horaire de la gym</a> </li>
+		<li> <a href="regles.html">Règles d'utilisation des machines</a> </li>
+		<li> <a href="horaire.html">Horaire de la gym</a> </li>
 		<li> <a href="questionnaire.html">Si vous avez une question :)</a> </li>
 		</ul>
-    </details>
+	</details>
 
 <hr>
 
@@ -55,4 +59,3 @@
     </footer>
 </body>
 </html>
-
