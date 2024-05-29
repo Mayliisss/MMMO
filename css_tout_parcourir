@@ -1,0 +1,109 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    padding: 10px 15px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #007BFF;
+    border-color: #0056b3;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Entête */
+div img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Sections de détails */
+details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+details li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+details li a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    transition: all 0.3s ease;
+}
+
+details li a:hover {
+    background-color: #0056b3;
+    border-color: #004494;
+}
+
+/* Pied de page */
+footer {
+    background: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer div {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #fff;
+    color: #007BFF;
+    border-color: #007BFF;
+}
