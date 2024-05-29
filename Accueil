@@ -3,6 +3,17 @@
 	<title>Sportify</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="sportify.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+	
+        function initMap() {
+            var mapOptions = {
+                center: { lat: 48.8566, lng: 2.3522 }, // Coordonées de Paris, modifiez selon votre besoin
+                zoom: 12
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+		</script>
 </head>
 <body>
 
@@ -52,11 +63,11 @@
             <br>Tu es connecté en tant que <b>Utilisateur</b><br>
             <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
             <div id="formUser" style="display:none;">
-                <br>Connecte-toi !<br>
-                <label for="username">Nom d'utilisateur (3-10) :</label>
+                <br>Connecte-toi ou crée un nouveu compte !<br>
+                <label for="username">Pseudo (3-10) :</label>
                 <input type="text" id="username" name="username" pattern=".{3,10}" required>
                 <br>
-                <label for="password">Mot de passe (3-10) :</label>
+                <label for="password">Password (3-10) :</label>
                 <input type="password" id="password" name="password" pattern=".{3,10}" required>
                 <br>
                 <div class="divThemeBoxChoice">
@@ -73,6 +84,22 @@
                         <img src='img/avatar/3.png' width="50">
                         <input type="radio" name="avatar" value="3" required>
                     </label>
+                    <label>
+                        <img src='img/avatar/4.png' width="50">
+                        <input type="radio" name="avatar" value="4" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/5.png' width="50">
+                        <input type="radio" name="avatar" value="5" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/6.png' width="50">
+                        <input type="radio" name="avatar" value="6" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/7.png' width="50">
+                        <input type="radio" name="avatar" value="7" required>
+                    </label>											
                     <!-- Add more avatar options as needed -->
                 </div>
                 <button type="button" class="MonButton" onclick="submitForm()">Login</button>
@@ -135,24 +162,102 @@
             }
         </script>
     </div>
+	
 </div>
 </div>
-<!--fin burger menu et login-->
-<hr>
-<center>
-		<h3>mettre évènement de la semaine ici! + photo (à faire carroussel comme TP4)</h3>
-</center>
+<!--fin burger menu et login  début navbar-->
 
+	<nav class="navbar navbar-expand-md">
+		
+ 		<!--<a class="navbar-brand" href="#">Logo</a>-->
+ 		<center><a href="logo.png"><img src="img/logo.png" class="logo" alt="logo", height=150 width=150></a></center>
+ 		<span class="navbar-toggler-icon"></span>
+ 		</button>
+ 		
+	</nav>
+<hr>
+
+<center>
+
+		<h3>Evènement de la semaine !</h3>
+<div id="divMaBoite">
+<div id="carrousel">
+<ul>
+ <li><img src="img/foot.png" width="700" height="400.png"/></li>
+ <li><img src="img/natation.png" width="700" height="400.png"/></li>
+ <li><img src="img/rugby.png" width="700" height="400.png"/></li>
+ <li><img src="img/tennis.png" width="700" height="400.png"/></li>
+ </ul>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>$(document).ready(function(){
+ var $carrousel = $('#carrousel') ; // on cible le bloc du carrousel
+
+ $img = $('#carrousel img') ; // on cible les images contenues dans le carrousel
+ indexImg = $img.length - 1 ; // on définit l'index du dernier élément
+ i = 0 ;// on initialise un compteur
+ $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+ $img.css('display', 'none'); // on cache les images
+ $currentImg.css('display', 'block'); // on affiche seulement l'image courante
+ $carrousel.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
+
+ $('.next').click(function(){ // image suivante
+ i++; // on incrémente le compteur
+ if (i <= indexImg){
+ $img.css('display', 'none'); // on cache les images
+ $currentImg = $img.eq(i); // on définit la nouvelle image
+ $currentImg.css('display', 'block'); // puis on l'affiche
+ }
+ else{
+ i = indexImg;
+ }
+ });
+ $('.prev').click(function(){ // image précédente
+ i--; // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
+ if (i >= 0){
+ $img.css('display', 'none');
+ $currentImg = $img.eq(i);
+ $currentImg.css('display', 'block');
+ }
+ else{
+ i = 0;
+ }
+ });
+ function slideImg(){
+ setTimeout(function(){ // on utilise une fonction anonyme
+ if (i < indexImg){ // si le compteur est inférieur au dernier index
+ i++; // on l'incrémente
+ }
+ else { // sinon, on le remet à 0 (première image)
+ i = 0;
+ }
+ $img.css('display', 'none');
+ $currentImg = $img.eq(i);
+ $currentImg.css('display', 'block');
+ slideImg(); // on oublie pas de relancer la fonction à la fin
+ }, 4000); // on définit l'intervalle à 4000 millisecondes (4s)
+ }
+ slideImg(); // enfin, on lance la fonction une première fois
+});</script>
+</center>
 
 <hr>
     <!-- Footer -->
     <footer>
         <div>
-          mettre coordonnées ici!
+          <u>Nous contacter:</u><br>
+		  <br>
+		  mail: sportify@ece.fr <br>
+		  téléphone: 07 83 75 06 24 <br>
+		  adresse: 10 Rue Sextius Michel, 75015 Paris <br>
+		  <br>
+		  <br>
         </div>
-        <div>
-            mettre ggl maps ici!
-        </div>
+        <div> <center>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10489.535118680167!2d2.2699910500000002!3d48.90807995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1716988184713!5m2!1sfr!2sfr" width="1200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             </center></div>
     </footer>
 <script src="sportify.js"></script>
 </BODY>
