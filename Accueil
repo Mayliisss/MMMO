@@ -20,6 +20,7 @@
 <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
   <ul>
+    <li><a href="#">Accueil</a></li>
     <li><a href="#">Tout parcourir</a></li>
     <li><a href="#">Recherche</a></li>
     <li><a href="#">Rendez-vous</a></li>
