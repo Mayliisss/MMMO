@@ -1,0 +1,39 @@
+<?php
+
+//identifier le nom de base de données
+$database = "projetpiscine";
+$date = isset($_POST["date"]) ? $_POST["date"] : "";
+$heure = isset($_POST["heure"]) ? $_POST["heure"] : "";
+$duree = isset($_POST["duree"]) ? $_POST["duree"] : "";
+$description = isset($_POST["description"]) ? $_POST["description"] : "";
+
+//connectez-vous dans votre BDD
+//Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
+ $db_handle = mysqli_connect('localhost', 'root', 'root' );
+  
+$db_found = mysqli_select_db($db_handle, $database);
+if ($date=="") {
+    echo"vide";
+}
+echo"$date";
+ //si le BDD existe, faire le traitement
+if ($db_found) {
+   
+       
+        $sql = "INSERT INTO rdv (ID_RDV, Numero_etudiant, ID_coach, Date, Horraire,Sport) VALUES ('2', '2', '3', '$date','$heure','natation')";
+
+        
+        if (mysqli_query($db_handle, $sql)) {
+        echo "Nouveau rendez-vous créé avec succès";
+    } else {
+        echo "Erreur: " . $sql . "<br>" . mysqli_error($db_handle);
+    }
+
+    // Fermer la connexion
+    mysqli_close($db_handle);
+        
+        
+        
+        
+    }
+?>
