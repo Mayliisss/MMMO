@@ -167,10 +167,11 @@
 	</nav>
 <hr>
  <!-- texte page -->
- 
+
+<center>
 <label for="xmlFile">Choisissez le CV du nouveau coach (fichier XML)</label>
 <input type="file" id="xmlFile" name="xmlFile" accept=".xml" />
-
+</center>
 <hr>
     <!-- Footer -->
     <footer>
