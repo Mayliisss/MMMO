@@ -1,0 +1,74 @@
+DROP DATABASE IF EXISTS projetPiscine;
+CREATE DATABASE projetPiscine;
+USE projetPiscine;
+
+CREATE TABLE IF NOT EXISTS Administrateur (
+    Nom VARCHAR(50) NOT NULL,
+    Prenom VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    PRIMARY KEY (Email)
+);
+
+CREATE TABLE IF NOT EXISTS Coach (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nom VARCHAR(255) NOT NULL,
+    Prenom VARCHAR(255) NOT NULL,
+    Photo VARCHAR(255) NOT NULL,
+    Specialité VARCHAR(255) NOT NULL,
+    Video VARCHAR(255) NOT NULL,
+    CV VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    MDP VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE IF NOT EXISTS Client (
+    Nom VARCHAR(255) NOT NULL,
+    Prenom VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Adresse VARCHAR(255) NOT NULL,
+    Numero_etudiant VARCHAR(50) NOT NULL,
+    Avatar VARCHAR(255) NOT NULL,
+    PRIMARY KEY (Numero_etudiant)
+);
+
+CREATE TABLE IF NOT EXISTS RDV (
+    ID_RDV VARCHAR(255) NOT NULL,
+    Numero_etudiant VARCHAR(255) NOT NULL,
+    ID_coach VARCHAR(255) NOT NULL,
+    Date VARCHAR(255) NOT NULL,
+    Horraire VARCHAR(50) NOT NULL,
+    Sport VARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID_RDV)
+);
+
+
+
+
+INSERT INTO Administrateur (Nom, Prenom, Email) 
+VALUES 
+('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr'),
+('Varet', 'Margaux', 'margaux.varet@edu.ece.fr'),
+('Saveaux', 'Octave', 'Octave.Saveaux@edu.ece.fr'),
+('Puech', 'Mathis', 'mathis.puech@edu.ece.fr');
+
+INSERT INTO Coach (Prenom, Nom, Photo, Specialité, Video, CV, Email, MDP) 
+VALUES 
+('Sophie', '', 'projetPiscine/Sophie.png', 'Natation', 'aucune', 'aucune', 'sophie.natation@edu.ece.fr'),
+('Alex', 'projetPiscine/Alex.png', 'Basket', 'aucune', 'aucune', 'alex.basket@edu.ece.fr'),
+('Maria', 'projetPiscine/Maria.png', 'Tennis', 'aucune', 'aucune', 'maria.tennis@edu.ece.fr'),
+('John', 'projetPiscine/John.png', 'Volley', 'aucune', 'aucune', 'john.volley@edu.ece.fr'),
+('Emma', 'projetPiscine/Emma.png', 'Gymnastique', 'aucune', 'aucune', 'emma.gym@edu.ece.fr'),
+('Liam', 'projetPiscine/Liam.png', 'Rugby', 'aucune', 'aucune', 'liam.rugby@edu.ece.fr'),
+('Olivia', 'projetPiscine/Olivia.png', 'Athlétisme', 'aucune', 'aucune', 'olivia.athlete@edu.ece.fr'),
+('Noah', 'projetPiscine/Noah.png', 'Escrime', 'aucune', 'aucune', 'noah.escrime@edu.ece.fr'),
+('Ava', 'projetPiscine/Ava.png', 'Danse', 'aucune', 'aucune', 'ava.danse@edu.ece.fr'),
+('Lucas', 'projetPiscine/Lucas.png', 'Handball', 'aucune', 'aucune', 'lucas.handball@edu.ece.fr'),
+('Mia', 'projetPiscine/Mia.png', 'Cyclisme', 'aucune', 'aucune', 'mia.cyclisme@edu.ece.fr'),
+('Ethan', 'projetPiscine/Ethan.png', 'Escalade', 'aucune', 'aucune', 'ethan.escalade@edu.ece.fr'),
+('Isabella', 'projetPiscine/Isabella.png', 'Equitation', 'aucune', 'aucune', 'isabella.equitation@edu.ece.fr'),
+('James', 'projetPiscine/James.png', 'Boxe', 'aucune', 'aucune', 'james.boxe@edu.ece.fr'),
+('Charlotte', 'projetPiscine/Charlotte.png', 'Judo', 'aucune', 'aucune', 'charlotte.judo@edu.ece.fr'),
+('Henry', 'projetPiscine/Henry.png', 'Hockey', 'aucune', 'aucune', 'henry.hockey@edu.ece.fr'),
+('Amelia', 'projetPiscine/Amelia.png', 'Golf', 'aucune', 'aucune', 'amelia.golf@edu.ece.fr'),
+('Sebastian', 'projetPiscine/Sebastian.png', 'Karate', 'aucune', 'aucune', 'sebastian.karate@edu.ece.fr'),
+('Grace', 'projetPiscine/Grace.png', 'Ski', 'aucune', 'aucune', 'grace.ski@edu.ece.fr');
