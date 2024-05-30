@@ -178,7 +178,50 @@
 	</nav>
 <hr>
  <!-- texte page -->
- 
+ <title>Recherche sur le site</title>
+    <style>
+        .search-container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+    </style>
+	
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Rechercher sur le site..." />
+    <button onclick="searchSite()">Rechercher</button>
+    <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+    function searchSite() {
+        const query = document.getElementById('searchInput').value;
+        const resultsContainer = document.getElementById('searchResults');
+        resultsContainer.innerHTML = ''; // Clear previous results
+
+        // simulate an API call to search the database
+        fetch('/api/search?q=' + query)
+            .then(response => response.json())
+            .then(data => {
+                if (data.results && data.results.length > 0) {
+                    data.results.forEach(result => {
+                        const resultDiv = document.createElement('div');
+                        resultDiv.textContent = result;
+                        resultsContainer.appendChild(resultDiv);
+                    });
+                } else {
+                    resultsContainer.textContent = 'Aucun résultat trouvé.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultsContainer.textContent = 'Une erreur est survenue lors de la recherche.';
+            });
+    }
+</script>
  
 <hr>
     <!-- Footer -->
