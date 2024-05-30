@@ -167,7 +167,10 @@
 	</nav>
 <hr>
  <!-- texte page -->
- 
+ <center>
+<input type="button" value="Rendez vous">
+<input type="button" value="Chatbot">
+</center>
 
 <hr>
     <!-- Footer -->
