@@ -178,7 +178,8 @@
 <hr>
 
 <center>
-
+		<h1> Bienvenue sur SPORTIFY : votre site de consultation sportive Omnes !</h1>
+		
 		<h3>Evènement de la semaine !</h3>
 <div id="divMaBoite">
 <div id="carrousel">
@@ -246,12 +247,13 @@
 <hr>
     <!-- Footer -->
     <footer>
-        <div>
-          <u>Nous contacter:</u><br>
-		  <br>
-		  mail: sportify@ece.fr <br>
-		  téléphone: 07 83 75 06 24 <br>
-		  adresse: 10 Rue Sextius Michel, 75015 Paris <br>
+        <div class="gros-texte">
+          <center><b>Nous contacter:</b><br> </center></div>
+		  <div>
+		  <center><table>
+		  <tr><td>mail: sportify@ece.fr </td></tr><br>
+		  <tr><td>téléphone: 07 83 75 06 24</td></tr> <br>
+		  <tr><td>adresse: 10 Rue Sextius Michel, 75015 Paris </td></tr><br></table></center>
 		  <br>
 		  <br>
         </div>
