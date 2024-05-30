@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="css_creation_compte.css" rel="stylesheet" type="text/css"/>
+
+    <title>Ajout compte coach</title>
+    
+</head>
+<body>
+
+    <!--entete, pas besoin de copier on prendra le code autre part -->
+    <div>
+        <!-- mettre logo -->
+        <img src=".gif" alt="tout parcourir" height="100" width="300"> 
+    </div>
+
+    <hr>
+    <h1>Ajout d'un compte coach</h1>
+    <p>Merci de remplir toutes les cases suivantes pour ajouter le compte. Assurez-vous que toutes les informations fournies sont correctes.</p>
+
+    <form method="post" enctype="multipart/form-data">
+        <table border="1">
+
+            <tr>
+                <td>Prénom</td>
+                <td><input type="text" name="Prenom" required></td>
+            </tr>
+            
+            <tr>
+                <td>Nom</td>
+                <td><input type="text" name="Nom" required></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="Email" required></td>
+            </tr>
+
+            <tr>
+                <td>Mot-de-Passe</td>
+                <td><input type="password" name="MDP" required></td>
+            </tr>
+
+            
+            <tr>
+                <td>Spécialité</td>
+                <td>
+                    <select name="specialite" id="specialite" required>
+                        <option value="">--Choisissez une option--</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="football">Football</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="natation">Natation</option>
+                        <option value="plongeon">Plongeon</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Image de profil</td>
+                <td><input type="file" id="image" name="image" accept="image/*" required></td>
+            </tr>
+
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="button1" value="Valider" formaction="ajouter_compte_coach.php">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
+    <!-- Footer avec navigation -->
+    <footer>
+        <div>
+            <a href="accueil.html">retour à l'accueil</a> | 
+        </div>
+        <div>
+            coordonnées?
+        </div>
+    </footer>
+</body>
+</html>
