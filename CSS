@@ -292,3 +292,6 @@ h3 {
             font-size: 24px;
             font-weight: bold;
         }
+input[type="button"] {
+    background-color: #97599A;
+}
