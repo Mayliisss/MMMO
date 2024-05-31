@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS Administrateur (
     Nom VARCHAR(50) NOT NULL,
     Prenom VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
+    MDP_admin VARCHAR(100) NOT NULL,
     PRIMARY KEY (Email)
 );
 
@@ -32,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Client (
 );
 
 CREATE TABLE IF NOT EXISTS RDV (
-    ID_RDV VARCHAR(50) NOT NULL,
+    ID_RDV VARCHAR(255) NOT NULL,
     Numero_etudiant VARCHAR(255) NOT NULL,
     ID_coach VARCHAR(255) NOT NULL,
     Date VARCHAR(255) NOT NULL,
@@ -44,12 +45,12 @@ CREATE TABLE IF NOT EXISTS RDV (
 
 
 
-INSERT INTO Administrateur (Nom, Prenom, Email) 
+INSERT INTO Administrateur (Nom, Prenom, Email, MDP_admin) 
 VALUES 
-('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr'),
-('Varet', 'Margaux', 'margaux.varet@edu.ece.fr'),
-('Saveaux', 'Octave', 'Octave.Saveaux@edu.ece.fr'),
-('Puech', 'Mathis', 'mathis.puech@edu.ece.fr');
+('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr', '1234'),
+('Varet', 'Margaux', 'margaux.varet@edu.ece.fr', '1234'),
+('Saveaux', 'Octave', 'Octave.Saveaux@edu.ece.fr', '1234'),
+('Puech', 'Mathis', 'mathis.puech@edu.ece.fr', '1234');
 
 INSERT INTO Coach (Prenom, Nom, Photo, Specialité, Video, CV, Email, MDP) 
 VALUES 
