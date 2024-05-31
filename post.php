@@ -1,13 +1,15 @@
 <?php
 session_start();
-if(isset($_SESSION['name'])){
- $text = $_POST['text'];
+if (isset($_SESSION['name']) && isset($_SESSION['nameDest'])) {
+    $text = $_POST['text'];
+    $expediteur = $_SESSION['name'];
+    $destinataire = $_SESSION['nameDest'];
 
- $text_message = "<div class='msgln'><span class='chat-time'>".date("g:i A")."</span> <b class='username'>".$_SESSION['name']."</b> ".stripslashes(htmlspecialchars($text))."<br></div>";
- // file_put_contents("log.html", $text_message, FILE_APPEND | LOCK_EX);
+    $filename = strtolower(min($expediteur, $destinataire) . '_' . max($expediteur, $destinataire) . '_log.html');
 
- $myfile = fopen(__DIR__ . "/".$_SESSION['name']."_log.html", "a") or die("Impossible d'ouvrir le fichier " . __DIR__ . "/".$_SESSION['name']."_log.html");
- fwrite($myfile, $text_message);
- fclose($myfile);
+    $text_message = "<div class='msgln'><span class='chat-time'>" . date("g:i A") . "</span> <b class='username'>" . $expediteur . "</b> " . stripslashes(htmlspecialchars($text)) . "<br></div>";
+    $myfile = fopen($filename, "a") or die("Impossible d'ouvrir le fichier " . $filename);
+    fwrite($myfile, $text_message);
+    fclose($myfile);
 }
 ?>
