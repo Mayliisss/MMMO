@@ -204,7 +204,7 @@
         const resultsContainer = document.getElementById('searchResults');
         resultsContainer.innerHTML = ''; //Effacer résultats précédents
 
-        // simulate an API call to search the database
+        //Simulation appel dans la BDD
         fetch('/api/search?q=' + query)
             .then(response => response.json())
             .then(data => {
