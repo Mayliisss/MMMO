@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
 	<title>Sportify</title>
@@ -23,7 +22,7 @@
 </div>
 
 
-<!--Burger menu et login-->
+<!--Burger menu et connexion-->
 
 <a href="#" id="openBtn">
   <span class="burger-icon">
@@ -54,7 +53,7 @@
     </div>
     <div class="divThemeBody">
         <form id="loginForm" action="login.php" method="post">
-            <!-- Vérifier loggin utilisateur -->
+            <!-- Vérifier connexion utilisateur -->
             <img src="img/avatar/userGray.png" width="38"/>
             <br>Tu es connecté en tant que <b>Utilisateur</b><br>
             <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
@@ -101,7 +100,7 @@
                 <button type="button" class="MonButton" onclick="submitForm()">Login</button>
             </div>
         </form>
-        
+
         <script>
 		    function afficherDiv(button, divId) {
 				var div = document.getElementById(divId);
@@ -162,7 +161,8 @@
 	
 </div>
 </div>
-<!--Fin burger menu et login-->
+<!--Fin burger menu et connexion-->
+
 
 
 <!--Début navbar-->
