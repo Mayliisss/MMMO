@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 	<title>Sportify</title>
@@ -8,7 +9,7 @@
 <body>
 
 
-//Menu coté
+<!--Menu coté-->
 
 <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
@@ -22,7 +23,8 @@
 </div>
 
 
-//Avatar connexion 
+<!--Burger menu et login-->
+
 <a href="#" id="openBtn">
   <span class="burger-icon">
     <span></span>
@@ -47,8 +49,6 @@
                 <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
             </tr>
         </table>
-		
-		
 		
 		
     </div>
@@ -161,7 +161,10 @@
 	
 </div>
 </div>
-<!--fin burger menu et login  début navbar-->
+<!--Fin burger menu et login-->
+
+
+<!--Début navbar-->
 
 	<nav class="navbar navbar-expand-md">
 		
@@ -173,8 +176,8 @@
 	</nav>
 <hr>
 
-//Style et écritures page
- <!-- texte page -->
+<!--Texte de la page et style-->
+
  <title>Recherche sur le site</title>
     <style>
         .search-container {
@@ -189,7 +192,8 @@
     </style>
 
 
-//Barre de recherche
+<!--Barre de recherche-->
+
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Rechercher sur le site..." />
     <button onclick="searchSite()">Rechercher</button>
@@ -223,6 +227,7 @@
 </script>
  
 <hr>
+
     <!-- Footer -->
     <footer>
         
