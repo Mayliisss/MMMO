@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
 //Menu coté
 
 <div id="mySidenav" class="sidenav">
@@ -20,6 +21,8 @@
   </ul>
 </div>
 
+
+//Avatar connexion 
 <a href="#" id="openBtn">
   <span class="burger-icon">
     <span></span>
@@ -169,6 +172,7 @@
  		
 	</nav>
 <hr>
+
  <!-- texte page -->
  <title>Recherche sur le site</title>
     <style>
@@ -182,7 +186,9 @@
             margin-top: 20px;
         }
     </style>
-	
+
+
+//Barre de recherche
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Rechercher sur le site..." />
     <button onclick="searchSite()">Rechercher</button>
