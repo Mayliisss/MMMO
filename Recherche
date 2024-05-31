@@ -7,6 +7,8 @@
 </head>
 <body>
 
+//Menu coté
+
 <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
   <ul>
