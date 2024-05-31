@@ -287,11 +287,51 @@ h3 {
             justify-content: center;
             align-items: center;
         }
-
  .gros-texte {
             font-size: 24px;
             font-weight: bold;
         }
+		
 input[type="button"] {
     background-color: #97599A;
+}
+details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+details li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+details li a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    transition: all 0.3s ease;
+}
+
+details li a:hover {
+    background-color: #0056b3;
+    border-color: #004494;
 }
