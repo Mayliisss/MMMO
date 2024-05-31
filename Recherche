@@ -202,7 +202,7 @@
     function searchSite() {
         const query = document.getElementById('searchInput').value;
         const resultsContainer = document.getElementById('searchResults');
-        resultsContainer.innerHTML = ''; // Clear previous results
+        resultsContainer.innerHTML = ''; //Effacer résultats précédents
 
         // simulate an API call to search the database
         fetch('/api/search?q=' + query)
