@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 	<title>Sportify</title>
@@ -53,7 +54,7 @@
     </div>
     <div class="divThemeBody">
         <form id="loginForm" action="login.php" method="post">
-            <!-- Check if user is logged in -->
+            <!-- Vérifier loggin utilisateur -->
             <img src="img/avatar/userGray.png" width="38"/>
             <br>Tu es connecté en tant que <b>Utilisateur</b><br>
             <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
@@ -66,7 +67,7 @@
                 <input type="password" id="password" name="password" pattern=".{3,10}" required>
                 <br>
                 <div class="divThemeBoxChoice">
-                    <!-- Avatar selection loop -->
+                    <!-- Selection de l'avatar -->
                     <label>
                         <img src='img/avatar/1.png' width="50">
                         <input type="radio" name="avatar" value="1" required>
@@ -95,11 +96,12 @@
                         <img src='img/avatar/7.png' width="50">
                         <input type="radio" name="avatar" value="7" required>
                     </label>											
-                    <!-- Add more avatar options as needed -->
+                    <!-- Ajouter autant d'options d'avatar que besoin -->
                 </div>
                 <button type="button" class="MonButton" onclick="submitForm()">Login</button>
             </div>
         </form>
+        
         <script>
 		    function afficherDiv(button, divId) {
 				var div = document.getElementById(divId);
@@ -191,7 +193,7 @@
     </style>
 
 
-<!--Barre de recherche-->
+<!--Barre de recherche dans la BDD-->
 
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Rechercher sur le site..." />
