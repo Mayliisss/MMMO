@@ -4,7 +4,6 @@ const daysOfWeek = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi",
 let currentDate = new Date();
 let today = new Date();
 
-
 async function loadAppointments() {
     console.log('Fetching appointments...');
     const response = await fetch('agenda.php');
@@ -24,7 +23,7 @@ function addEventToCalendar(eventDate, eventTime, eventDuration) {
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
         const rowTime = row.cells[0].innerText;
-        const [rowHour, rowMinute] = rowTime.split(':');
+        const [rowHour] = rowTime.split(':');
 
         if (parseInt(rowHour) === eventStartDateTime.getHours()) {
             const dayIndex = (eventStartDateTime.getDay() + 6) % 7; // Adjust for 0-indexed days
@@ -33,7 +32,7 @@ function addEventToCalendar(eventDate, eventTime, eventDuration) {
                 const rowIndex = i + j; // Calculate the row index based on duration
                 if (rowIndex < rows.length) {
                     const cell = rows[rowIndex].cells[cellIndex];
-                     cell.innerHTML = ""; // Clear existing content
+                    cell.innerHTML = ""; // Clear existing content
                     cell.style.backgroundColor = "red";
                 }
             }
@@ -63,6 +62,8 @@ async function updateCalendar() {
     const dateRow = document.getElementById("date-row");
     dateRow.innerHTML = "<th></th>"; // Clear existing dates and add empty cell for time column
 
+    const appointments = await loadAppointments(); // Load appointments once
+
     for (let i = 0; i < 7; i++) {
         const date = new Date(startOfWeek);
         date.setDate(startOfWeek.getDate() + i);
@@ -75,19 +76,6 @@ async function updateCalendar() {
 
         dateCell.textContent = `${date.getDate()}/${date.getMonth() + 1}`;
         dateRow.appendChild(dateCell);
-
-        // Charger et ajouter les rendez-vous pour cette date
-        const appointments = await loadAppointments();
-        appointments.forEach(appointment => {
-            const formattedDate = formatDate(new Date(appointment.Date));
-            const currentDateFormatted = formatDate(date);
-            console.log("date evenement",formattedDate);
-            console.log("date calendrier",currentDateFormatted);
-            if (formattedDate === currentDateFormatted) {
-                console.log("on est la ");
-                addEventToCalendar(appointment.Date, appointment.Horraire, appointment.Sport);
-            }
-        });
     }
 
     for (let hour = 8; hour <= 20; hour++) {
@@ -98,16 +86,25 @@ async function updateCalendar() {
 
         for (let day = 0; day < 7; day++) {
             const cell = document.createElement("td");
+            cell.style.backgroundColor = "green"; // Set background color to green
             row.appendChild(cell);
-            cell.style.backgroundColor = "green";
         }
         agendaBody.appendChild(row);
     }
 
-    // Charger et ajouter les rendez-vous
-    
+    // Ajouter les rendez-vous après avoir généré les cellules
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(startOfWeek);
+        date.setDate(startOfWeek.getDate() + i);
+        const formattedDate = formatDate(date);
+        
+        appointments.forEach(appointment => {
+            if (appointment.Date === formattedDate) {
+                addEventToCalendar(appointment.Date, appointment.Horraire, appointment.Numero_etudiant);
+            }
+        });
+    }
 }
-
 
 function getStartOfWeek(date) {
     const startOfWeek = new Date(date);
@@ -139,4 +136,5 @@ document.getElementById("event-form").addEventListener("submit", function(event)
 
 // Initial call to set up the calendar
 updateCalendar();
+
 
