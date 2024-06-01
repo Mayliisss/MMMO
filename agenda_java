@@ -1,7 +1,16 @@
+console.log('JavaScript is loaded');
 const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 const daysOfWeek = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 let currentDate = new Date();
 let today = new Date();
+
+async function loadAppointments() {
+    console.log('Fetching appointments...');
+    const response = await fetch('agenda.php');
+    const appointments = await response.json();
+    console.log('Appointments loaded:', appointments);
+    return appointments;
+}
 
 function showConfirmationModal() {
     const modal = document.getElementById("confirmationModal");
@@ -14,6 +23,13 @@ function showConfirmationModal() {
         modal.style.display = "none";
     }
 
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
 
 function sendAppointmentData(date, time) {
     const data = new FormData();
@@ -36,14 +52,6 @@ function sendAppointmentData(date, time) {
     });
 }
 
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-}
 function addEventListenersToCells() {
     const agendaBody = document.getElementById("agenda-body");
     const cells = agendaBody.getElementsByTagName("td");
@@ -62,16 +70,6 @@ function addEventListenersToCells() {
             });
         }
     }
-}
-
-
-
-async function loadAppointments() {
-    console.log('Fetching appointments...');
-    const response = await fetch('agenda.php');
-    const appointments = await response.json();
-    console.log('Appointments loaded:', appointments);
-    return appointments;
 }
 
 function addEventToCalendar(eventDate, eventTime, eventDuration) {
@@ -149,6 +147,13 @@ async function updateCalendar() {
         for (let day = 0; day < 7; day++) {
             const cell = document.createElement("td");
             cell.style.backgroundColor = "green"; // Set background color to green
+            
+            // Ajout des attributs `data-date` et `data-time`
+            const date = new Date(startOfWeek);
+            date.setDate(startOfWeek.getDate() + day);
+            cell.setAttribute("data-date", formatDate(date));
+            cell.setAttribute("data-time", `${hour}:00`);
+            
             row.appendChild(cell);
         }
         agendaBody.appendChild(row);
@@ -162,10 +167,11 @@ async function updateCalendar() {
         
         appointments.forEach(appointment => {
             if (appointment.Date === formattedDate) {
-                addEventToCalendar(appointment.Date, appointment.Horraire, appointment.Numero_etudiant);
+                addEventToCalendar(appointment.Date, appointment.Horraire, appointment.duree);
             }
         });
     }
+    addEventListenersToCells(); // Ajouter les écouteurs d'événements après la mise à jour du calendrier
 }
 
 function getStartOfWeek(date) {
@@ -198,5 +204,3 @@ document.getElementById("event-form").addEventListener("submit", function(event)
 
 // Initial call to set up the calendar
 updateCalendar();
-
-
