@@ -1,4 +1,7 @@
 <?php
+
+	session_start();
+
 	//identifier le nom de base de données
 	$database = "projetpiscine";
 
@@ -44,7 +47,16 @@
 
 			    	if($num_ligne > 0)
 			    	{
-				        header("Location: resultat_creation.html?x=0");
+	                    // Store user data in session
+	                    $_SESSION['user_type'] = $UserType;
+	                    $_SESSION['MDP'] = $MDP; // or another unique identifier
+	                    $_SESSION['login'] = $login;
+
+	                    // echo "<p>Utilisateur connecté en tant que ".$_SESSION['login']." (".$_SESSION['user_type']."), ID: ".$_SESSION['user_id']."</p>";
+
+
+
+				        header("Location: chat.php");
 				    }
 				    else 
 				    {
