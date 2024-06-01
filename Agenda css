@@ -4,7 +4,9 @@
 }
 
 
-
+ .empty-cells{
+            background-color: green;
+        }
 
 .header {
     text-align: center;
