@@ -14,6 +14,29 @@ function showConfirmationModal() {
         modal.style.display = "none";
     }
 
+
+function sendAppointmentData(date, time) {
+    const data = new FormData();
+    data.append("date", date);
+    data.append("time", time);
+
+    fetch('nv_rdv.php', {
+        method: 'POST',
+        body: data
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response from PHP:", data);
+        updateCalendar(); // Mettre à jour le calendrier après l'ajout d'un rendez-vous
+        alert("Le rendez-vous est confirmé");
+         
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
