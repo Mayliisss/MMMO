@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Administrateur (
     Nom VARCHAR(50) NOT NULL,
     Prenom VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
-    MDP_admin VARCHAR(100) NOT NULL,
+    MDP VARCHAR(100) NOT NULL,
     PRIMARY KEY (Email)
 );
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS RDV (
 
 
 
-INSERT INTO Administrateur (Nom, Prenom, Email, MDP_admin) 
+INSERT INTO Administrateur (Nom, Prenom, Email, MDP) 
 VALUES 
 ('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr', '1234'),
 ('Varet', 'Margaux', 'margaux.varet@edu.ece.fr', '1234'),
