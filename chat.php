@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+
+$userType = $_SESSION['user_type'];
+$MDP = $_SESSION['MDP'];
+$login = $_SESSION['login'];
+// echo "_".$userType."_";
+// echo "_".$MDP."_";
+// echo "_".$login."_";
+
+
+
 function getPrenomFromDatabase() {
     // Identifier le nom de base de données
     $database = "projetpiscine";
@@ -11,7 +21,14 @@ function getPrenomFromDatabase() {
     if ($db_found) {
         // Exécuter la requête SQL pour obtenir le prénom
         // $sql = "SELECT Prenom FROM Client WHERE Numero_etudiant = 1";
-        $sql = "SELECT Prenom FROM Coach WHERE ID = 13";
+        if($_SESSION['user_type'] === 'Client') $sql = "SELECT Prenom FROM Client WHERE Numero_etudiant = ".$_SESSION['MDP']."";
+        elseif($_SESSION['user_type'] === 'Coach') $sql = "SELECT Prenom FROM Coach WHERE MDP = '".$_SESSION['MDP']."' AND Email = '".$_SESSION['login']."'";
+        else echo "merdeeeeeee";
+        
+
+
+
+        // $sql = "SELECT Prenom FROM $userType WHERE ID = 13";
         $result = mysqli_query($db_handle, $sql);
         // Vérifier si la requête a retourné un résultat
         if ($result && mysqli_num_rows($result) > 0) {
@@ -19,7 +36,8 @@ function getPrenomFromDatabase() {
             $data = mysqli_fetch_assoc($result);
             mysqli_close($db_handle);
             return $data['Prenom'];
-        } else {
+        } 
+        else {
             echo "Aucun étudiant trouvé avec le numéro d'étudiant 1.";
         }
     } else {
