@@ -49,3 +49,72 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+/* Style de base pour le bouton */
+
+ #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+            background-color: violet;
+        }
+        #header h2 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            font-size: 52px;
+        }
+        #header img {
+            height: 150px;
+            width: 150px;
+        }
+
+
+.bouton {
+    background-color: #97599A; /* Vert */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Bords arrondis */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation de transition */
+}
+
+/* Style pour le survol du bouton */
+.bouton:hover {
+    background-color: #9744be; 
+}
+
+/* Style pour le bouton actif (au clic) */
+.bouton:active {
+    background-color: #3e8e41; /* Vert encore plus foncé */
+    transform: scale(0.98); /* Légère réduction de la taille */
+}
+
+/* Style pour le bouton avec le focus */
+.btn:focus {
+    outline: none; /* Retire le contour par défaut */
+    box-shadow: 0 0 10px #4CAF50; /* Ajoute une ombre de focus */
+}
+.tableau{
+	display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 100vh; /* Occupe toute la hauteur de la vue */
+    text-align: center; /* Centre le texte dans le conteneur */
+}
