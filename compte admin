@@ -3,6 +3,7 @@
 	<title>Sportify</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="sportify.css">
+
 </head>
 <body>
 
@@ -166,12 +167,54 @@
  		
 	</nav>
 <hr>
- <!-- texte page -->
-
+<center><h1>COMPTE ADMINISTRATEUR</h1></center>
 <center>
 <label for="xmlFile">Choisissez le CV du nouveau coach (fichier XML)</label>
 <input type="file" id="xmlFile" name="xmlFile" accept=".xml" />
 </center>
+<center>
+<table>
+<th>
+<h4> Formulaire des diponibilités:</h4>
+ <div>
+    <label for="nom_coach">Nom du Coach :</label>
+    <input type="text" id="nom_coach" name="nom_coach" required>
+  </div>
+  <div>
+    <label for="disponibilites">Disponibilités :</label>
+    <textarea id="disponibilites" name="disponibilites" rows="4" required></textarea>
+	<br>
+    <small>Indiquez vos horaires disponibles, jours de la semaine, plages horaires, etc.</small>
+  </div>
+  <div>
+    <button type="submit">Soumettre</button>
+  </div>
+  </th>
+  <th>
+	<table class ="tableau">
+		
+			<th> Coach</th>
+			<th>Salles</th>
+		<tr>
+			<td>
+				<a href="ajouterC.html" class="bouton">ajouter</a>
+			</td>
+			<td>
+				<a href="AjouterS.html" class ="bouton">Ajouter</a> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="suprimerC.html" class="bouton">supprimer</a>
+			</td>
+			<td>
+				<a href="supprimerS.html" class ="bouton">Supprimer</a>
+			</td>
+		</tr>
+		
+</table>
+</th>
+</table> </center>
 <hr>
     <!-- Footer -->
     <footer>
