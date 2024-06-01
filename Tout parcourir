@@ -18,10 +18,10 @@
         <summary>Activités sportives</summary>
 		<ul>
 		<li> <a href="musculation.html" class="bouton" value="musculation">Musculation</a> </li>
-		<li> <a href="fitness.html">Fitness</a> </li>
-		<li> <a href="biking.html">Biking</a> </li>
-		<li> <a href="cardio.html">Cardio-Training</a> </li>
-		<li> <a href="coursco.html">Cours Collectif</a> </li>		
+		<li> <a href="fitness.html"class="bouton" value="musculation">Fitness</a> </li>
+		<li> <a href="biking.html" class="bouton" value="musculation">Biking</a> </li>
+		<li> <a href="cardio.html" class="bouton" value="musculation">Cardio-Training</a> </li>
+		<li> <a href="coursco.html" class="bouton" value="musculation">Cours Collectif</a> </li>		
 		</ul>
 	</details>
 
