@@ -33,13 +33,14 @@ CREATE TABLE IF NOT EXISTS Client (
 );
 
 CREATE TABLE IF NOT EXISTS RDV (
-    ID_RDV VARCHAR(255) NOT NULL,
+    ID_RDV INT AUTO_INCREMENT PRIMARY KEY,
     Numero_etudiant VARCHAR(255) NOT NULL,
     ID_coach VARCHAR(255) NOT NULL,
     Date VARCHAR(255) NOT NULL,
     Horraire VARCHAR(50) NOT NULL,
     Sport VARCHAR(255) NOT NULL,
-    PRIMARY KEY (ID_RDV)
+    Duree VARCHAR(255) NOT NULL,
+    Digicode VARCHAR(255) NOT NULL
 );
 
 
@@ -73,3 +74,4 @@ VALUES
 ('Amelia', 'Taylor', 'projetPiscine/Amelia.png', 'Golf', 'aucune', 'aucune', 'amelia.golf@edu.ece.fr', 'mdpAmelia'),
 ('Sebastian', 'Moore', 'projetPiscine/Sebastian.png', 'Karate', 'aucune', 'aucune', 'sebastian.karate@edu.ece.fr', 'mdpSebastian'),
 ('Grace', 'Jackson', 'projetPiscine/Grace.png', 'Ski', 'aucune', 'aucune', 'grace.ski@edu.ece.fr', 'mdpGrace');
+
