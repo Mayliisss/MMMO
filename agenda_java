@@ -1,9 +1,55 @@
+console.log('JavaScript is loaded');
 const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 const daysOfWeek = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 let currentDate = new Date();
 let today = new Date();
 
-function updateCalendar() {
+
+async function loadAppointments() {
+    console.log('Fetching appointments...');
+    const response = await fetch('agenda.php');
+    const appointments = await response.json();
+    console.log('Appointments loaded:', appointments);
+    return appointments;
+}
+
+function addEventToCalendar(eventDate, eventTime, eventDuration) {
+    const [year, month, day] = eventDate.split('-');
+    const [hour, minute] = eventTime.split(':');
+    const eventStartDateTime = new Date(year, month - 1, day, hour, minute);
+
+    const tableBody = document.getElementById("agenda-body");
+    const rows = tableBody.getElementsByTagName("tr");
+
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const rowTime = row.cells[0].innerText;
+        const [rowHour, rowMinute] = rowTime.split(':');
+
+        if (parseInt(rowHour) === eventStartDateTime.getHours()) {
+            const dayIndex = (eventStartDateTime.getDay() + 6) % 7; // Adjust for 0-indexed days
+            for (let j = 0; j < eventDuration; j++) {
+                const cellIndex = dayIndex + 1; // Adjust for time column
+                const rowIndex = i + j; // Calculate the row index based on duration
+                if (rowIndex < rows.length) {
+                    const cell = rows[rowIndex].cells[cellIndex];
+                     cell.innerHTML = ""; // Clear existing content
+                    cell.style.backgroundColor = "red";
+                }
+            }
+            break;
+        }
+    }
+}
+
+function formatDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Ajoute un zéro au début si le mois est inférieur à 10
+    const day = String(date.getDate()).padStart(2, '0'); // Ajoute un zéro au début si le jour est inférieur à 10
+    return `${year}-${month}-${day}`;
+}
+
+async function updateCalendar() {
     const monthName = monthNames[currentDate.getMonth()];
     const yearNumber = currentDate.getFullYear();
     document.getElementById("month-name").textContent = monthName;
@@ -29,6 +75,19 @@ function updateCalendar() {
 
         dateCell.textContent = `${date.getDate()}/${date.getMonth() + 1}`;
         dateRow.appendChild(dateCell);
+
+        // Charger et ajouter les rendez-vous pour cette date
+        const appointments = await loadAppointments();
+        appointments.forEach(appointment => {
+            const formattedDate = formatDate(new Date(appointment.Date));
+            const currentDateFormatted = formatDate(date);
+            console.log("date evenement",formattedDate);
+            console.log("date calendrier",currentDateFormatted);
+            if (formattedDate === currentDateFormatted) {
+                console.log("on est la ");
+                addEventToCalendar(appointment.Date, appointment.Horraire, appointment.Sport);
+            }
+        });
     }
 
     for (let hour = 8; hour <= 20; hour++) {
@@ -40,10 +99,15 @@ function updateCalendar() {
         for (let day = 0; day < 7; day++) {
             const cell = document.createElement("td");
             row.appendChild(cell);
+            cell.style.backgroundColor = "green";
         }
         agendaBody.appendChild(row);
     }
+
+    // Charger et ajouter les rendez-vous
+    
 }
+
 
 function getStartOfWeek(date) {
     const startOfWeek = new Date(date);
@@ -63,4 +127,16 @@ document.getElementById("next").addEventListener("click", () => {
     updateCalendar();
 });
 
-updateCalendar(); // Initial call to set up the calendar
+document.getElementById("event-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const eventDate = document.getElementById("event-date").value;
+    const eventTime = document.getElementById("event-time").value;
+    const eventDuration = parseInt(document.getElementById("event-duration").value);
+    const eventDescription = document.getElementById("event-description").value;
+
+    addEventToCalendar(eventDate, eventTime, eventDuration);
+});
+
+// Initial call to set up the calendar
+updateCalendar();
+
