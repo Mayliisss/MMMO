@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+	<link href="styles_compte.css" rel="stylesheet" type="text/css"/>
+    <title>Mon compte</title>
+</head>
+<body>
+    <div id = header>
+  		<h2>Mon compte </h2>
+        <img src="logo.png" alt="tout parcourir" height="150" width="150"> 
+       
+
+    </div>
+    	
+
+	<table class ="tableau">
+		
+			<th> Coach</th>
+			<th>Salles</th>
+		<tr>
+			<td>
+				<a href="ajouterC.html" class="bouton">ajouter</a>
+			</td>
+			<td>
+				<a href="AjouterS.html" class ="bouton">Ajouter</a> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="suprimerC.html" class="bouton">supprimer</a>
+			</td>
+			<td>
+				<a href="supprimerS.html" class ="bouton">Supprimer</a>
+			</td>
+		</tr>
+		
+</table>
+
+
+
+    <!-- Footer avec navigation -->
+    <footer>
+        <div>
+            <a href="accueil.html">retour à l'accueil</a> | 
+        </div>
+        <div>
+            coordonnées?
+        </div>
+    </footer>
+</body>
+</html>
