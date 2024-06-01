@@ -44,6 +44,28 @@ function sendAppointmentData(date, time) {
         }
     }
 }
+function addEventListenersToCells() {
+    const agendaBody = document.getElementById("agenda-body");
+    const cells = agendaBody.getElementsByTagName("td");
+
+    for (let cell of cells) {
+        if (cell.style.backgroundColor === "green") {
+            cell.addEventListener("click", function() {
+                const row = cell.parentElement;
+                const time = row.cells[0].innerText;
+                const dayIndex = cell.cellIndex - 1;
+                const dateHeader = document.querySelector(`#date-row th:nth-child(${dayIndex + 2})`).innerText;
+                const [day, month] = dateHeader.split('/');
+                const date = `${currentDate.getFullYear()}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                console.log("Clicked cell:", cell, "Date:", date, "Time:", time); // Log de la cellule cliquée, de la date et de l'heure
+                sendAppointmentData(date, time);
+            });
+        }
+    }
+}
+
+
+
 async function loadAppointments() {
     console.log('Fetching appointments...');
     const response = await fetch('agenda.php');
