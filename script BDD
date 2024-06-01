@@ -73,4 +73,3 @@ VALUES
 ('Amelia', 'Taylor', 'projetPiscine/Amelia.png', 'Golf', 'aucune', 'aucune', 'amelia.golf@edu.ece.fr', 'mdpAmelia'),
 ('Sebastian', 'Moore', 'projetPiscine/Sebastian.png', 'Karate', 'aucune', 'aucune', 'sebastian.karate@edu.ece.fr', 'mdpSebastian'),
 ('Grace', 'Jackson', 'projetPiscine/Grace.png', 'Ski', 'aucune', 'aucune', 'grace.ski@edu.ece.fr', 'mdpGrace');
-
