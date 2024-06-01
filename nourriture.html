@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+	<title>Sportify</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sportify.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+	
+        function initMap() {
+            var mapOptions = {
+                center: { lat: 48.8566, lng: 2.3522 }, // Coordonées de Paris, modifiez selon votre besoin
+                zoom: 12
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+		</script>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a id="closeBtn" href="#" class="close">×</a>
+  <ul>
+	<li><a href="#">Accueil</a></li>
+    <li><a href="#">Tout parcourir</a></li>
+    <li><a href="#">Recherche</a></li>
+    <li><a href="#">Rendez-vous</a></li>
+    <li><a href="#">Votre compte</a></li>
+  </ul>
+</div>
+
+<a href="#" id="openBtn">
+  <span class="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</a>
+
+<div class="divScore" id="scoreDiv">
+<table border="0">
+    <tr>
+        <td valign="middle">
+            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divUserContainer');" />
+        </td>
+    </tr>
+</table>
+<div class="divThemeContainer" id="divUserContainer">
+    <div class="divThemeHeader">
+        <table width="100%">
+            <tr>
+                <td align="left"><b>Profil</b></td>
+                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
+            </tr>
+        </table>
+		
+		
+		
+		
+    </div>
+    <div class="divThemeBody">
+        <form id="loginForm" action="login.php" method="post">
+            <!-- Check if user is logged in -->
+            <img src="img/avatar/userGray.png" width="38"/>
+            <br>Tu es connecté en tant que <b>Utilisateur</b><br>
+            <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
+            <div id="formUser" style="display:none;">
+                <br>Connecte-toi ou crée un nouveu compte !<br>
+                <label for="username">Pseudo (3-10) :</label>
+                <input type="text" id="username" name="username" pattern=".{3,10}" required>
+                <br>
+                <label for="password">Password (3-10) :</label>
+                <input type="password" id="password" name="password" pattern=".{3,10}" required>
+                <br>
+                <div class="divThemeBoxChoice">
+                    <!-- Avatar selection loop -->
+                    <label>
+                        <img src='img/avatar/1.png' width="50">
+                        <input type="radio" name="avatar" value="1" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/2.png' width="50">
+                        <input type="radio" name="avatar" value="2" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/3.png' width="50">
+                        <input type="radio" name="avatar" value="3" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/4.png' width="50">
+                        <input type="radio" name="avatar" value="4" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/5.png' width="50">
+                        <input type="radio" name="avatar" value="5" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/6.png' width="50">
+                        <input type="radio" name="avatar" value="6" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/7.png' width="50">
+                        <input type="radio" name="avatar" value="7" required>
+                    </label>											
+                    <!-- Add more avatar options as needed -->
+                </div>
+                <button type="button" class="MonButton" onclick="submitForm()">Login</button>
+            </div>
+        </form>
+        <script>
+		    function afficherDiv(button, divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+			
+			function afficherDivModal(divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+	
+            function submitForm() {
+                // Récupérer les valeurs du formulaire
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                var avatar = document.querySelector("input[name='avatar']:checked").value;
+
+                // Vérifier si les champs sont bien renseignés
+                if (!avatar) {
+                    alert("Veuillez choisir un avatar !");
+                    return;
+                }
+
+                // Vérifier la taille du nom d'utilisateur
+                if (username.length < 3 || username.length > 10) {
+                    alert("Le pseudo doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Vérifier la taille du mot de passe
+                if (password.length < 3 || password.length > 10) {
+                    alert("Le mot de passe doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Envoyer les données au script PHP via AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "login.php",
+                    data: { username: username, password: password, avatar: avatar },
+                    success: function(response) {
+                        // Afficher la réponse du serveur (peut être un message de succès ou d'erreur)
+                        alert(response);
+                        window.location.href = "";
+                    }
+                });
+            }
+        </script>
+    </div>
+	
+</div>
+</div>
+<!--fin burger menu et login  début navbar-->
+
+	<nav class="navbar navbar-expand-md">
+		
+ 		<!--<a class="navbar-brand" href="#">Logo</a>-->
+ 		<center><a href="logo.png"><img src="img/logo.png" class="logo" alt="logo", height=150 width=150></a></center>
+ 		<span class="navbar-toggler-icon"></span>
+ 		</button>
+ 		
+	</nav>
+<hr>
+<center><h1>Conseils alimentaire!</h1></center>
+        <section>
+            <h2>1. Équilibre Alimentaire</h2>
+            <ul>
+                <li><strong>Manger une variété d'aliments</strong>: Incluez des fruits, des légumes, des céréales complètes, des protéines maigres et des produits laitiers dans votre alimentation quotidienne.</li>
+                <li><strong>Contrôlez les portions</strong>: Évitez les portions excessives en utilisant des assiettes plus petites et en écoutant les signaux de faim et de satiété de votre corps.</li>
+                <li><strong>Limitez les aliments transformés</strong>: Réduisez votre consommation d'aliments riches en sucres ajoutés, en graisses saturées et en sodium.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2. Hydratation</h2>
+            <ul>
+                <li><strong>Boire de l'eau</strong>: Maintenez une hydratation adéquate en buvant suffisamment d'eau tout au long de la journée.</li>
+                <li><strong>Évitez les boissons sucrées</strong>: Limitez votre consommation de sodas, de jus de fruits sucrés et de boissons énergisantes.</li>
+                <li><strong>Thé et café avec modération</strong>: Si vous consommez du thé ou du café, limitez-vous à des versions non sucrées et sans ajout de crème.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>3. Planification des Repas</h2>
+            <ul>
+                <li><strong>Préparez vos repas à l'avance</strong>: Planifiez vos repas et collations pour éviter de vous retrouver dans des situations où vous êtes tenté de manger des aliments malsains.</li>
+                <li><strong>Apportez des collations saines</strong>: Ayez des collations nutritives à portée de main pour éviter de succomber à des envies de malbouffe.</li>
+                <li><strong>Ne sautez pas de repas</strong>: Évitez de sauter des repas, surtout le petit-déjeuner, car cela peut entraîner des fringales et des choix alimentaires moins sains plus tard dans la journée.</li>
+            </ul>
+        </section>
+    </div>
+
+<hr>
+    <!-- Footer -->
+    <footer>
+        
+    </footer>
+<script src="sportify.js"></script>
+</BODY>
+</html>
