@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CoachCV>
+    <InformationsPersonnelles>
+        <Nom>Adam Quelquesjours</Nom>
+        <Email>adam.quelquesjours@example.com</Email>
+        <NuméroTéléphone>+33 6 12 34 56 78</NuméroTéléphone>
+        <Adresse>
+            <Rue>456 Avenue du Rugby</Rue>
+            <Ville>Toulouse</Ville>
+            <CodePostal>31000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationsPersonnelles>
+    <Éducation>
+        <Diplôme>
+            <Titre>Master en Sciences du Sport</Titre>
+            <Institution>Université de Toulouse</Institution>
+            <Année>2011</Année>
+        </Diplôme>
+        <Diplôme>
+            <Titre>Certificat d'Entraîneur de Rugby</Titre>
+            <Institution>Fédération Française de Rugby</Institution>
+            <Année>2013</Année>
+        </Diplôme>
+    </Éducation>
+    <Expérience>
+        <Emploi>
+            <Titre>Entraîneur Principal de Rugby</Titre>
+            <Entreprise>Club de Rugby de Toulouse</Entreprise>
+            <Lieu>Toulouse, France</Lieu>
+            <DateDébut>2014-01</DateDébut>
+            <DateFin>Présent</DateFin>
+            <Responsabilités>
+                <Responsabilité>Gestion de l'équipe première</Responsabilité>
+                <Responsabilité>Planification et mise en œuvre des séances d'entraînement</Responsabilité>
+                <Responsabilité>Développement des stratégies de jeu</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+        <Emploi>
+            <Titre>Joueur Professionnel de Rugby</Titre>
+            <Entreprise>Ligue Professionnelle de Rugby</Entreprise>
+            <Lieu>Toulouse, France</Lieu>
+            <DateDébut>2006-01</DateDébut>
+            <DateFin>2013-12</DateFin>
+            <Responsabilités>
+                <Responsabilité>Participation à des compétitions nationales et internationales</Responsabilité>
+                <Responsabilité>Expérience en tant que capitaine de l'équipe</Responsabilité>
+                <Responsabilité>Contribution au succès de l'équipe</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+    </Expérience>
+    <Certifications>
+        <Certification>
+            <Titre>Certification d'Entraîneur de Rugby</Titre>
+            <Émetteur>Fédération Française de Rugby</Émetteur>
+            <Année>2013</Année>
+        </Certification>
+        <Certification>
+            <Titre>Certification en Préparation Physique</Titre>
+            <Émetteur>Institut National du Sport</Émetteur>
+            <Année>2016</Année>
+        </Certification>
+    </Certifications>
+    <Compétences>
+        <Compétence>Stratégie et Tactique de Jeu</Compétence>
+        <Compétence>Leadership et Gestion d'Équipe</Compétence>
+        <Compétence>Planification d'Entraînement</Compétence>
+        <Compétence>Évaluation des Joueurs et Recrutement</Compétence>
+    </Compétences>
+</CoachCV>
