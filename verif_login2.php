@@ -44,6 +44,7 @@
 
 		    		$result = mysqli_query($db_handle, $sql);
 		        	$num_ligne = mysqli_num_rows($result);
+		        	$row = mysqli_fetch_assoc($result);
 
 			    	if($num_ligne > 0)
 			    	{
@@ -51,12 +52,16 @@
 	                    $_SESSION['user_type'] = $UserType;
 	                    $_SESSION['MDP'] = $MDP; // or another unique identifier
 	                    $_SESSION['login'] = $login;
+	                    $_SESSION['avatar_login'] = $row['Avatar'];
+	                    $_SESSION['Nom_login'] = $row['Nom'];
+	                    $_SESSION['Prenom_login'] = $row['Prenom'];
+
 
 	                    // echo "<p>Utilisateur connecté en tant que ".$_SESSION['login']." (".$_SESSION['user_type']."), ID: ".$_SESSION['user_id']."</p>";
 
 
 
-				        header("Location: chat.php");
+				        header("Location: resultat_creation.html?x=0");
 				    }
 				    else 
 				    {
@@ -82,76 +87,245 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link href="css_creation_compte.css" rel="stylesheet" type="text/css"/>
+    <link href="sportify.css" rel="stylesheet" type="text/css"/>
 
     <title>Login</title>
     
 </head>
 <body>
 
-    <!--entete, pas besoin de copier on prendra le code autre part -->
-    <div>
-        <!-- mettre logo -->
-        <img src=".gif" alt="tout parcourir" height="100" width="300"> 
-    </div>
+    <div id="mySidenav" class="sidenav">
+  		<a id="closeBtn" href="#" class="close">×</a>
+	  	<ul>
+		    <li><a href="accueil.html">Accueil</a></li>
+		    <li><a href="#">Tout parcourir</a></li>
+		    <li><a href="recherche.php">Recherche</a></li>
+		    <li><a href="#">Rendez-vous</a></li>
+		    <li><a href="#">Votre compte</a></li>
+	  	</ul>
+	</div>
+	<a href="#" id="openBtn">
+  		<span class="burger-icon">
+		    <span></span>
+		    <span></span>
+		    <span></span>
+  		</span>
+	</a>
 
-    <hr>
-    <h1>Connectez-vous !</h1>
-
-    <?php 
-       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
-           echo "<p class= 'Erreur'>".$erreur."</p>"  ;
-       }
-    ?>
-
-    <form method="post">
-        <table border="1">
-
-
-
-
+	<div class="divScore" id="scoreDiv">
+<table border="0">
+    <tr>
+        <td valign="middle">
+            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divUserContainer');" />
+        </td>
+    </tr>
+</table>
+<div class="divThemeContainer" id="divUserContainer">
+    <div class="divThemeHeader">
+        <table width="100%">
             <tr>
-                <td>Type</td>
-                <td>
-                    <input type="radio" id="Client" name="user_type" value="Client" required>
-                    <label for="Client">Client</label>
-                    <input type="radio" id="Coach" name="user_type" value="Coach" required>
-                    <label for="Coach">Coach</label>
-                    <input type="radio" id="administrateur" name="user_type" value="administrateur" required>
-                    <label for="administrateur">Administrateur</label>
-                </td>
+                <td align="left"><b>Profil</b></td>
+                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
             </tr>
-
-
-            <tr>
-                <td>Login</td>
-                <td><input type="text" name="Login" required></td>
-            </tr>
-            
-            <tr>
-                <td>Mot-de-passe</td>
-                <td><input type="password" name="MDP" required></td>
-            </tr>
-
-            
-            <tr>
-                <td colspan="2">
-                    <input type="submit" name="button1" value="Valider">
-                </td>
-            </tr>
-
-
-           
-
-
         </table>
-    </form>
+		
+		
+		
+		
+    </div>
+    <div class="divThemeBody">
+        <form id="loginForm" action="login.php" method="post">
+            <!-- Check if user is logged in -->
+            <img src="img/avatar/userGray.png" width="38"/>
+            <br>Tu es connecté en tant que <b>Utilisateur</b><br>
+            <button type="button" class="MonButton" onclick="redirectToVerifLogin2()">Se connecter</button>
 
-    <a href="creation_compte.html">Inscription</a>
+            <script>
+            function redirectToVerifLogin2() {
+                window.location.href = "verif_login2.php";
+            }
+            </script>
 
 
-    <hr>
+            <div id="formUser" style="display:none;">
+                <br>Connecte-toi ou crée un nouveu compte !<br>
+                <label for="username">Pseudo (3-10) :</label>
+                <input type="text" id="username" name="username" pattern=".{3,10}" required>
+                <br>
+                <label for="password">Password (3-10) :</label>
+                <input type="password" id="password" name="password" pattern=".{3,10}" required>
+                <br>
+                <div class="divThemeBoxChoice">
+                    <!-- Avatar selection loop -->
+                    <label>
+                        <img src='img/avatar/1.png' width="50">
+                        <input type="radio" name="avatar" value="1" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/2.png' width="50">
+                        <input type="radio" name="avatar" value="2" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/3.png' width="50">
+                        <input type="radio" name="avatar" value="3" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/4.png' width="50">
+                        <input type="radio" name="avatar" value="4" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/5.png' width="50">
+                        <input type="radio" name="avatar" value="5" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/6.png' width="50">
+                        <input type="radio" name="avatar" value="6" required>
+                    </label>
+                    <label>
+                        <img src='img/avatar/7.png' width="50">
+                        <input type="radio" name="avatar" value="7" required>
+                    </label>											
+                    <!-- Add more avatar options as needed -->
+                </div>
+                <button type="button" class="MonButton" onclick="submitForm()">Login</button>
+            </div>
+        </form>
+        <script>
+		    function afficherDiv(button, divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+			
+			function afficherDivModal(divId) {
+				var div = document.getElementById(divId);
+				if (div.style.display === "none" || div.style.display === "") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+	
+            function submitForm() {
+                // Récupérer les valeurs du formulaire
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                var avatar = document.querySelector("input[name='avatar']:checked").value;
 
+                // Vérifier si les champs sont bien renseignés
+                if (!avatar) {
+                    alert("Veuillez choisir un avatar !");
+                    return;
+                }
+
+                // Vérifier la taille du nom d'utilisateur
+                if (username.length < 3 || username.length > 10) {
+                    alert("Le pseudo doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Vérifier la taille du mot de passe
+                if (password.length < 3 || password.length > 10) {
+                    alert("Le mot de passe doit avoir entre 3 et 10 caractères.");
+                    return;
+                }
+
+                // Envoyer les données au script PHP via AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "login.php",
+                    data: { username: username, password: password, avatar: avatar },
+                    success: function(response) {
+                        // Afficher la réponse du serveur (peut être un message de succès ou d'erreur)
+                        alert(response);
+                        window.location.href = "";
+                    }
+                });
+            }
+        </script>
+    </div>
+	
+</div>
+</div>
+
+<!--Début navbar-->
+<nav class="navbar navbar-expand-md">
+    <!--<a class="navbar-brand" href="#">Logo</a>-->
+    <center><a href="logo.png"><img src="img/logo.png" class="logo" alt="logo", height=150 width=150></a></center>
+    <span class="navbar-toggler-icon"></span>
+</nav>
+
+
+
+
+
+
+
+
+
+
+	<div class="form_login">
+    	<hr>
+    
+	    <h1>Connectez-vous !</h1>
+
+	    <?php 
+	       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+	           echo "<p class= 'Erreur'>".$erreur."</p>"  ;
+	       }
+	    ?>
+
+	    <form method="post">
+	        <table border="1">
+
+
+
+
+	            <tr>
+	                <td>Type</td>
+	                <td>
+	                    <input type="radio" id="Client" name="user_type" value="Client" required>
+	                    <label for="Client">Client</label>
+	                    <input type="radio" id="Coach" name="user_type" value="Coach" required>
+	                    <label for="Coach">Coach</label>
+	                    <input type="radio" id="administrateur" name="user_type" value="administrateur" required>
+	                    <label for="administrateur">Administrateur</label>
+	                </td>
+	            </tr>
+
+
+	            <tr>
+	                <td>Login</td>
+	                <td><input type="text" name="Login" required></td>
+	            </tr>
+	            
+	            <tr>
+	                <td>Mot-de-passe</td>
+	                <td><input type="password" name="MDP" required></td>
+	            </tr>
+
+	            
+	            <tr>
+	                <td colspan="2">
+	                    <input type="submit" name="button1" value="Valider">
+	                </td>
+	            </tr>
+
+
+	           
+
+
+	        </table>
+	    </form>
+
+	    <a href="creation_compte.html">Inscription</a>
+
+
+	    <hr>
+	</div>
     <!-- Footer avec navigation -->
     <footer>
         <div>
@@ -161,5 +335,7 @@
             coordonnées?
         </div>
     </footer>
+<script src="sportify.js"></script>
+
 </body>
 </html>
