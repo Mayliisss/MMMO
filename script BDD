@@ -77,7 +77,7 @@ VALUES
 ('Harry', 'Cover', 'img/coach/harry.png', 'Football', 'aucune', 'aucune', 'harry.football@edu.ece.fr', 'mdpHarry'),
 ('Adam', 'Quelquesjours', 'img/coach/Adam.png', 'Rugby', 'aucune', 'aucune', 'adam.rugby@edu.ece.fr', 'mdpAdam'),
 
-('Mathis', 'Puech', 'img/coach/Mathis.png', 'Musculation', 'aucune', 'aucune', 'mathis.athlete@edu.ece.fr', 'mdpMathis'),
+('Mathis', 'Puech', 'img/coach/Mathis.png', 'Musculation', 'aucune', 'aucune', 'mathis.musculation@edu.ece.fr', 'mdpMathis'),
 ('Thomas', 'Toketchup', 'img/coach/Noah.png', 'Fitness', 'aucune', 'aucune', 'thomas.fitness@edu.ece.fr', 'mdpThomas'),
 ('Paul', 'Ochon', 'img/coach/Paul.png', 'Biking', 'aucune', 'aucune', 'paul.biking@edu.ece.fr', 'mdpPaul'),
 ('Laurent', 'Houtan', 'img/coach/Laurent.png', 'Cardio', 'aucune', 'aucune', 'laurent.cardio@edu.ece.fr', 'mdpLaurent'),
