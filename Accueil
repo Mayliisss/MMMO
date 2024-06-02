@@ -20,11 +20,11 @@
 <div id="mySidenav" class="sidenav">
   <a id="closeBtn" href="#" class="close">×</a>
   <ul>
-    <li><a href="#">Accueil</a></li>
-    <li><a href="#">Tout parcourir</a></li>
-    <li><a href="#">Recherche</a></li>
-    <li><a href="#">Rendez-vous</a></li>
-    <li><a href="#">Votre compte</a></li>
+	<li><a href="index.html">Accueil</a></li>
+    <li><a href="toutparcourir.html">Tout parcourir</a></li>
+    <li><a href="recherche.html">Recherche</a></li>
+    <li><a href="rdv.html">Rendez-vous</a></li>
+    <li><a href="compte.html">Votre compte</a></li>
   </ul>
 </div>
 
@@ -36,28 +36,25 @@
   </span>
 </a>
 
-<div class="divScore" id="scoreDiv">
+<div class="divAvatarContour" id="divAvatarContour">
 <table border="0">
     <tr>
         <td valign="middle">
-            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divUserContainer');" />
+            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divAvatarContainer');" />
         </td>
     </tr>
 </table>
-<div class="divThemeContainer" id="divUserContainer">
-    <div class="divThemeHeader">
+<div class="divAvatarContainer" id="divAvatarContainer">
+    <div class="divAvatarHeader">
         <table width="100%">
             <tr>
                 <td align="left"><b>Profil</b></td>
-                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
+                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divAvatarContainer').style.display = 'none';">✖</td>
             </tr>
         </table>
 		
-		
-		
-		
     </div>
-    <div class="divThemeBody">
+    <div class="divAvatarBody">
         <form id="loginForm" action="login.php" method="post">
             <!-- Check if user is logged in -->
             <img src="img/avatar/userGray.png" width="38"/>
@@ -65,13 +62,13 @@
             <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
             <div id="formUser" style="display:none;">
                 <br>Connecte-toi ou crée un nouveu compte !<br>
-                <label for="username">Pseudo (3-10) :</label>
+                <label for="username">Nom d'utilisateur (3-10) :</label>
                 <input type="text" id="username" name="username" pattern=".{3,10}" required>
                 <br>
-                <label for="password">Password (3-10) :</label>
+                <label for="password">Mot de passe (3-10) :</label>
                 <input type="password" id="password" name="password" pattern=".{3,10}" required>
                 <br>
-                <div class="divThemeBoxChoice">
+                <div class="divAvatarBoxChoice">
                     <!-- Avatar selection loop -->
                     <label>
                         <img src='img/avatar/1.png' width="50">
