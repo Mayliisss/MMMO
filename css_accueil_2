@@ -1,3 +1,117 @@
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.divScore {
+    position: fixed;
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    min-width: 40px;
+    background-color: White;
+    padding: 0px 0px 0px 0px;
+    border-radius: 20px;
+    border: 2px solid Yellow; 
+}
+.divThemeContainer {
+        display: none;
+        position: fixed;
+        top: 55px;
+        left: 2px;
+        width: 95%;
+        background-color: White;
+        border: 2px solid MidnightBlue;
+        padding: 0px 17px 0px 0px;
+        border-radius: 5px;
+    }
+.divThemeHeader {
+        width: 100%;
+        background-color: White;        
+        font-size: 18px;
+        padding: 5px 5px 5px 5px;
+    }
+.divThemeBody {
+        width: 100%;
+        max-height: 500px;
+        padding: 5px 5px 5px 5px;
+        overflow-y: scroll;
+        align-items: center;
+    }
+.divThemeBoxChoice {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 100%;    
+}
+.MonButton {
+    background-color: #007AFF;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
 body {
  padding: 0px;
  margin: 0px;
@@ -5,8 +119,9 @@ body {
 }
 /*--- navigation bar ---*/
 .navbar {
- background:#6ab446;
+ background:#97599A;
 }
+
 .nav-link, .navbar-brand {
  color: #fff;
  cursor: pointer;
@@ -110,6 +225,12 @@ features .form-control,
  padding: 40px 0;
 }
 
+footer{
+    margin-bottom: 50px;
+}
+
+
+
 
 @media (max-width: 575.98px) {
  .description {
@@ -133,3 +254,365 @@ features .form-control,
  margin: 0;
  }
 }
+ #carrousel {
+            height: 200px;
+            width: 700px;
+            margin-bottom: 250px;
+            position: relative; 
+        }
+
+#carrousel ul li {
+            list-style-type: none;
+        }
+
+h3 {
+            text-align: center;
+            color: #66669A;
+        }
+
+.controls {
+            position: absolute; 
+            bottom: 10px; 
+            left: 0; 
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+.prev, .next {
+            background-color: #97599A;
+            border: 2px solid black;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px 20px;
+        }
+
+#divMaBoite {
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+ .gros-texte {
+            font-size: 24px;
+            font-weight: bold;
+        }
+		
+input[type="button"] {
+    background-color: #97599A;
+}
+details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+details li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+details li a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    transition: all 0.3s ease;
+}
+
+details li a:hover {
+    background-color: #0056b3;
+    border-color: #004494;
+}
+
+
+
+/* CSS pour page login*/
+
+
+#loginPage
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    margin-top: 100px;
+}
+
+
+#loginPage a {
+    text-decoration: none;
+    color: #8A2BE2; /* Violet clair */
+    padding: 10px 15px;
+    border: 2px solid #8A2BE2; /* Violet clair */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#loginPage a:hover {
+    color: #fff;
+    background-color: #8A2BE2; /* Violet clair */
+    border-color: #551A8B; /* Violet plus foncé */
+}
+
+#loginPage hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Entête */
+#loginPage div img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Titres et paragraphes */
+#loginPage h1 {
+    text-align: center;
+    color: #8A2BE2; /* Violet clair */
+    margin: 20px 0;
+}
+
+#loginPage p {
+    text-align: center;
+    margin: 0 20px 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Formulaire de création de compte */
+#loginPage form {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+#loginPage form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#loginPage form td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#loginPage form input[type="text"],
+form input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+}
+
+#loginPage form input[type="submit"] {
+    background-color: #8A2BE2; /* Violet clair */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+#loginPage form input[type="submit"]:hover {
+    background-color: #551A8B; /* Violet plus foncé */
+}
+
+
+
+
+
+.search-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-results {
+    margin-top: 30px;
+}
+
+.result-container {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+}
+
+.result-container p {
+    margin: 0;
+}
+
+.result-container .more-info {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.result-container .more-info:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* STYLE POUR PAGE CONNEXION */
+.form_login
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.form_login h1
+{
+    text-align: center;
+    color: #8A2BE2; /* Violet clair */
+    margin: 20px 0;
+}
+
+.form_login a {
+    text-decoration: none;
+    color: #8A2BE2; /* Violet clair */
+    padding: 10px 15px;
+    border: 2px solid #8A2BE2; /* Violet clair */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form_login a:hover {
+    color: #fff;
+    background-color: #8A2BE2; /* Violet clair */
+    border-color: #551A8B; /* Violet plus foncé */
+}
+
+.form_login hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.form_login div img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.form_login p {
+    text-align: center;
+    margin: 0 20px 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.form_login form {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.form_login form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form_login form td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.form_login form input[type="text"], form input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.form_login form input[type="submit"] {
+    background-color: #8A2BE2; /* Violet clair */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+.form_login form input[type="submit"]:hover {
+    background-color: #551A8B; /* Violet plus foncé */
+}
+
+.form_login .avatar-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+ 
+.form_login .avatar-selection label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_login .avatar-selection input[type="radio"] {
+    display: none;
+}
+
+.form_login .avatar-selection img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.form_login .avatar-selection input[type="radio"]:checked + img {
+    border: 2px solid #8A2BE2; /* Violet clair */
+}
+
