@@ -18,22 +18,22 @@
         <summary>Activités sportives</summary>
 		<ul>
 		<li> <a href="musculation.html" class="bouton" value="musculation">Musculation</a> </li>
-		<li> <a href="fitness.html"class="bouton" value="musculation">Fitness</a> </li>
-		<li> <a href="biking.html" class="bouton" value="musculation">Biking</a> </li>
-		<li> <a href="cardio.html" class="bouton" value="musculation">Cardio-Training</a> </li>
-		<li> <a href="coursco.html" class="bouton" value="musculation">Cours Collectif</a> </li>		
+		<li> <a href="fitness.html"class="bouton" value="fitness">Fitness</a> </li>
+		<li> <a href="biking.html" class="bouton" value="biking">Biking</a> </li>
+		<li> <a href="cardio.html" class="bouton" value="cardio">Cardio-Training</a> </li>
+		<li> <a href="coursco.html" class="bouton" value="course">Cours Collectif</a> </li>		
 		</ul>
 	</details>
 
 	<details>
         <summary>Sports de compétition</summary>
 		<ul>
-		<li> <a href="basket.html">Basket</a> </li>
-		<li> <a href="football.html">Football</a> </li>
-		<li> <a href="rugby.html">Rugby</a> </li>
-		<li> <a href="tennis.html">Tennis</a> </li>
-		<li> <a href="natation.html">Natation</a> </li>	
-		<li> <a href="plongeon.html">Plongeon</a> </li>		
+		<li> <a href="basket.html" class="bouton" value="basket">Basket</a> </li>
+		<li> <a href="football.html" class="bouton" value="football">Football</a> </li>
+		<li> <a href="rugby.html"class="bouton" value="rugby">Rugby</a> </li>
+		<li> <a href="tennis.html" class="bouton" value="tennis">Tennis</a> </li>
+		<li> <a href="natation.html"class="bouton" value="natation">Natation</a> </li>	
+		<li> <a href="plongeon.html" class="bouton" value="plongeon">Plongeon</a> </li>		
 		</ul>
 	</details>
 
