@@ -61,7 +61,7 @@
 
 
 
-				        header("Location: resultat_creation.html?x=0");
+				        header("Location: resultat_creation.php?x=0");
 				    }
 				    else 
 				    {
@@ -97,7 +97,7 @@
     <div id="mySidenav" class="sidenav">
   		<a id="closeBtn" href="#" class="close">×</a>
 	  	<ul>
-		    <li><a href="accueil.html">Accueil</a></li>
+		    <li><a href="accueil.php">Accueil</a></li>
 		    <li><a href="#">Tout parcourir</a></li>
 		    <li><a href="recherche.php">Recherche</a></li>
 		    <li><a href="#">Rendez-vous</a></li>
@@ -326,15 +326,25 @@
 
 	    <hr>
 	</div>
+
+
     <!-- Footer avec navigation -->
     <footer>
-        <div>
-            <a href="accueil.html">retour à l'accueil</a> | 
+        <div class="gros-texte">
+          <center><b>Nous contacter:</b><br> </center></div>
+          <div>
+          <center><table>
+          <tr><td>mail: sportify@ece.fr </td></tr><br>
+          <tr><td>téléphone: 07 83 75 06 24</td></tr> <br>
+          <tr><td>adresse: 10 Rue Sextius Michel, 75015 Paris </td></tr><br></table></center>
+          <br>
+          <br>
         </div>
-        <div>
-            coordonnées?
-        </div>
+        <div class="boutton_retour_accueil"><a href="accueil.php">retour à l'accueil</a></div>
+        
     </footer>
+
+    
 <script src="sportify.js"></script>
 
 </body>
