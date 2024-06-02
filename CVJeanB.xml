@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CoachCV>
+    <InformationsPersonnelles>
+        <Nom>Jean Bonboeur</Nom>
+        <Email>jean.bonboeur@example.com</Email>
+        <NuméroTéléphone>+33 6 12 34 56 78</NuméroTéléphone>
+        <Adresse>
+            <Rue>789 Rue du Basket</Rue>
+            <Ville>Lyon</Ville>
+            <CodePostal>69000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationsPersonnelles>
+    <Éducation>
+        <Diplôme>
+            <Titre>Master en Entraînement Sportif</Titre>
+            <Institution>Université de Lyon</Institution>
+            <Année>2010</Année>
+        </Diplôme>
+        <Diplôme>
+            <Titre>Certificat en Management du Sport</Titre>
+            <Institution>École Supérieure de Commerce de Lyon</Institution>
+            <Année>2012</Année>
+        </Diplôme>
+    </Éducation>
+    <Expérience>
+        <Emploi>
+            <Titre>Entraîneur Principal de Basket</Titre>
+            <Entreprise>Club de Basket de Lyon</Entreprise>
+            <Lieu>Lyon, France</Lieu>
+            <DateDébut>2013-01</DateDébut>
+            <DateFin>Présent</DateFin>
+            <Responsabilités>
+                <Responsabilité>Planification et organisation des entraînements</Responsabilité>
+                <Responsabilité>Développement des compétences individuelles et collectives</Responsabilité>
+                <Responsabilité>Gestion des tactiques de jeu</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+        <Emploi>
+            <Titre>Joueur Professionnel de Basket</Titre>
+            <Entreprise>Ligue Nationale de Basket</Entreprise>
+            <Lieu>Lyon, France</Lieu>
+            <DateDébut>2005-01</DateDébut>
+            <DateFin>2012-12</DateFin>
+            <Responsabilités>
+                <Responsabilité>Participation aux compétitions nationales et internationales</Responsabilité>
+                <Responsabilité>Capitaine de l'équipe pendant 4 saisons</Responsabilité>
+                <Responsabilité>Contribution au développement du basket dans la région</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+    </Expérience>
+    <Certifications>
+        <Certification>
+            <Titre>Certification d'Entraîneur de Basket</Titre>
+            <Émetteur>Fédération Française de Basket</Émetteur>
+            <Année>2014</Année>
+        </Certification>
+        <Certification>
+            <Titre>Certification en Premiers Secours</Titre>
+            <Émetteur>Croix-Rouge Française</Émetteur>
+            <Année>2015</Année>
+        </Certification>
+    </Certifications>
+    <Compétences>
+        <Compétence>Stratégie et tactique de jeu</Compétence>
+        <Compétence>Leadership et gestion d'équipe</Compétence>
+        <Compétence>Développement des compétences individuelles</Compétence>
+        <Compétence>Planification et organisation des entraînements</Compétence>
+    </Compétences>
+</CoachCV>
