@@ -1,3 +1,33 @@
+
+
+body {
+ padding: 0px;
+ margin: 0px;
+ background: #f2f6e9;
+}
+
+/**************************************************************/
+/*--- navigation bar ---*/
+.navbar {
+ background:#97599A;
+}
+
+.nav-link, .navbar-brand {
+ color: #fff;
+ cursor: pointer;
+}
+.nav-link {
+ margin-right: 1em !important;
+}
+.nav-link:hover {
+ color: #000;
+}
+.navbar-collapse {
+ justify-content: flex-end;
+}
+
+
+/**************************************************************/
 /* Sidenav menu */
 .sidenav {
   height: 100%;
@@ -52,12 +82,12 @@
   background-color: black;
   margin: 6px 0;
 }
-
-.divScore {
+/*********************************Gestion avatar*****************************/
+.divAvatarContour {
     position: fixed;
-    display: flex; /* Utilisation de flexbox */
-    justify-content: center; /* Centrage horizontal */
-    align-items: center; /* Centrage vertical */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     top: 5px;
     right: 5px;
     height: 40px;
@@ -67,7 +97,7 @@
     border-radius: 20px;
     border: 2px solid Yellow; 
 }
-.divThemeContainer {
+.divAvatarContainer {
         display: none;
         position: fixed;
         top: 55px;
@@ -78,20 +108,20 @@
         padding: 0px 17px 0px 0px;
         border-radius: 5px;
     }
-.divThemeHeader {
+.divAvatarHeader {
         width: 100%;
         background-color: White;        
         font-size: 18px;
         padding: 5px 5px 5px 5px;
     }
-.divThemeBody {
+.divAvatarBody {
         width: 100%;
         max-height: 500px;
         padding: 5px 5px 5px 5px;
         overflow-y: scroll;
         align-items: center;
     }
-.divThemeBoxChoice {
+.divAvatarBoxChoice {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -100,7 +130,7 @@
     width: 100%;    
 }
 .MonButton {
-    background-color: #007AFF;
+    background-color: #97599A;
     border: none;
     color: white;
     padding: 10px;
@@ -111,4 +141,239 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 20px;
+}
+
+/********************************************************************/
+
+
+.overlay {
+ position: absolute;
+ min-height: 100%;
+ min-width: 100%;
+ left: 0px;
+ top: 0px;
+ background-color: rgba(0, 0, 0, 0.4);
+}
+
+.description {
+ left: 50%;
+ position: absolute;
+ top: 45%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+.description h1 {
+ color: #6ab446;
+}
+.description p {
+ color: #fff;
+ font-size: 1.3rem;
+ line-height: 1.5;
+}
+
+
+.description button {
+ border:1px solid #6ab446;
+ background-color: #6ab446;
+ border-radius: 0;
+ color: #fff;
+}
+.description button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}
+
+features {
+ margin: 4em auto;
+ padding: 1em;
+ position: relative;
+}
+.feature-title {
+ color: #333;
+ font-size: 1.3rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+}
+.features img {
+ -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+ margin-bottom: 16px;
+}
+
+features .form-control,
+.features input {
+ border-radius: 0;
+}
+.features .btn {
+ background-color: #589b37;
+ border: 1px solid #589b37;
+ color: #fff;
+ margin-top: 20px;
+}
+.features .btn:hover {
+ background-color: #333;
+ border: 1px solid #333;
+}
+
+.page-footer {
+ background-color: #222;
+ color: #ccc;
+ padding: 60px 0 30px;
+}
+.footer-copyright {
+ color: #666;
+ padding: 40px 0;
+}
+
+
+@media (max-width: 575.98px) {
+ .description {
+ left: 0;
+ padding: 0 15px;
+ position: absolute;
+ top: 10%;
+ transform: none;
+ text-align: center;
+ }
+
+ .description h1 {
+ font-size: 2em;
+ }
+
+ .description p {
+ font-size: 1.2rem;
+ }
+
+ .features {
+ margin: 0;
+ }
+}
+ #carrousel {
+            height: 200px;
+            width: 700px;
+            margin-bottom: 250px;
+            position: relative; 
+        }
+
+#carrousel ul li {
+            list-style-type: none;
+        }
+
+h3 {
+            text-align: center;
+            color: #66669A;
+        }
+
+.controls {
+            position: relative; 
+            bottom: 10px; 
+            left: 0; 
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+.prev, .next {
+            background-color: #97599A;
+            border: 2px solid black;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px 20px;
+        }
+
+
+ .gros-texte {
+            font-size: 24px;
+            font-weight: bold;
+        }
+		
+input[type="button"] {
+    background-color: #97599A;
+}
+details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+details li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+details li a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    transition: all 0.3s ease;
+}
+
+details li a:hover {
+    background-color: #0056b3;
+    border-color: #004494;
+}
+
+.table-img {
+    width: 200px;
+    height: auto;
+  }
+
+.bouton {
+    background-color: #97599A; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Style pour le survol du bouton */
+.bouton:hover {
+    background-color: #9744be; 
+}
+
+/* Style pour le bouton actif (au clic) */
+.bouton:active {
+    background-color: #3e8e41; /* Vert encore plus foncé */
+    transform: scale(0.98); /* Légère réduction de la taille */
+}
+
+/* Style pour le bouton avec le focus */
+.btn:focus {
+    outline: none; /* Retire le contour par défaut */
+    box-shadow: 0 0 10px #4CAF50; /* Ajoute une ombre de focus */
+}
+.tableau{
+	display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 100vh; /* Occupe toute la hauteur de la vue */
+    text-align: center; /* Centre le texte dans le conteneur */
 }
