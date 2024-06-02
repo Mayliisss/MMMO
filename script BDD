@@ -70,22 +70,16 @@ VALUES
 
 INSERT INTO Coach (Prenom, Nom, Photo, Specialité, Video, CV, Email, MDP) 
 VALUES 
-('Sophie', 'Durand', 'img/coach/Sophie.png', 'Natation', 'aucune', 'aucune', 'sophie.natation@edu.ece.fr', 'mdpSophie'),
-('Alex', 'Martin', 'img/coach/Alex.png', 'Basket', 'aucune', 'aucune', 'alex.basket@edu.ece.fr', 'mdpAlex'),
-('Maria', 'Lopez', 'img/coach/Maria.png', 'Tennis', 'aucune', 'aucune', 'maria.tennis@edu.ece.fr', 'mdpMaria'),
-('John', 'Doe', 'img/coach/John.png', 'Volley', 'aucune', 'aucune', 'john.volley@edu.ece.fr', 'mdpJohn'),
-('Emma', 'Smith', 'img/coach/Emma.png', 'Gymnastique', 'aucune', 'aucune', 'emma.gym@edu.ece.fr', 'mdpEmma'),
-('Liam', 'Brown', 'img/coach/Liam.png', 'Rugby', 'aucune', 'aucune', 'liam.rugby@edu.ece.fr', 'mdpLiam'),
-('Olivia', 'Jones', 'img/coach/Olivia.png', 'Athlétisme', 'aucune', 'aucune', 'olivia.athlete@edu.ece.fr', 'mdpOlivia'),
-('Noah', 'Miller', 'img/coach/Noah.png', 'Escrime', 'aucune', 'aucune', 'noah.escrime@edu.ece.fr', 'mdpNoah'),
-('Ava', 'Garcia', 'img/coach/Ava.png', 'Danse', 'aucune', 'aucune', 'ava.danse@edu.ece.fr', 'mdpAva'),
-('Lucas', 'Martinez', 'img/coach/Lucas.png', 'Handball', 'aucune', 'aucune', 'lucas.handball@edu.ece.fr', 'mdpLucas'),
-('Mia', 'Rodriguez', 'img/coach/Mia.png', 'Cyclisme', 'aucune', 'aucune', 'mia.cyclisme@edu.ece.fr', 'mdpMia'),
-('Ethan', 'Hernandez', 'img/coach/Ethan.png', 'Escalade', 'aucune', 'aucune', 'ethan.escalade@edu.ece.fr', 'mdpEthan'),
-('Isabella', 'Gonzalez', 'img/coach/Isabella.png', 'Equitation', 'aucune', 'aucune', 'isabella.equitation@edu.ece.fr', 'mdpIsabella'),
-('James', 'Wilson', 'img/coach/James.png', 'Boxe', 'aucune', 'aucune', 'james.boxe@edu.ece.fr', 'mdpJames'),
-('Charlotte', 'Anderson', 'img/coach/Charlotte.png', 'Judo', 'aucune', 'aucune', 'charlotte.judo@edu.ece.fr', 'mdpCharlotte'),
-('Henry', 'Thomas', 'img/coach/Henry.png', 'Hockey', 'aucune', 'aucune', 'henry.hockey@edu.ece.fr', 'mdpHenry'),
-('Amelia', 'Taylor', 'img/coach/Amelia.png', 'Golf', 'aucune', 'aucune', 'amelia.golf@edu.ece.fr', 'mdpAmelia'),
-('Sebastian', 'Moore', 'img/coach/Sebastian.png', 'Karate', 'aucune', 'aucune', 'sebastian.karate@edu.ece.fr', 'mdpSebastian'),
-('Grace', 'Jackson', 'img/coach/Grace.png', 'Ski', 'aucune', 'aucune', 'grace.ski@edu.ece.fr', 'mdpGrace');
+('Jean', 'Peuplu', 'img/coach/JeanP.png', 'Natation', 'aucune', 'aucune', 'jean.natation@edu.ece.fr', 'mdpJeanP'),
+('Jean', 'Bonboeur', 'img/coach/JeanB.png', 'Basket', 'aucune', 'aucune', 'jean.bonboeur@edu.ece.fr', 'mdpJeanB'),
+('Yves', 'Vapabien', 'img/coach/Yves.png', 'Tennis', 'aucune', 'aucune', 'yves.tennis@edu.ece.fr', 'mdpYves'),
+('Emma', 'Karena', 'img/coach/Emma.png', 'Plongeon', 'aucune', 'aucune', 'emma.plongeon@edu.ece.fr', 'mdpEmma'),
+('Harry', 'Cover', 'img/coach/harry.png', 'Football', 'aucune', 'aucune', 'harry.football@edu.ece.fr', 'mdpHarry'),
+('Adam', 'Quelquesjours', 'img/coach/Adam.png', 'Rugby', 'aucune', 'aucune', 'adam.rugby@edu.ece.fr', 'mdpAdam'),
+
+('Mathis', 'Puech', 'img/coach/Mathis.png', 'Musculation', 'aucune', 'aucune', 'mathis.athlete@edu.ece.fr', 'mdpMathis'),
+('Thomas', 'Toketchup', 'img/coach/Noah.png', 'Fitness', 'aucune', 'aucune', 'thomas.fitness@edu.ece.fr', 'mdpThomas'),
+('Paul', 'Ochon', 'img/coach/Paul.png', 'Biking', 'aucune', 'aucune', 'paul.biking@edu.ece.fr', 'mdpPaul'),
+('Laurent', 'Houtan', 'img/coach/Laurent.png', 'Cardio', 'aucune', 'aucune', 'laurent.cardio@edu.ece.fr', 'mdpLaurent'),
+('Justin', 'Ptipeu', 'img/coach/Justin.png', 'Coursco', 'aucune', 'aucune', 'justin.coursco@edu.ece.fr', 'mdpJustin');
+
