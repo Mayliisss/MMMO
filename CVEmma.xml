@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CoachCV>
+    <InformationsPersonnelles>
+        <Nom>Emma Karena</Nom>
+        <Email>emma.karena@example.com</Email>
+        <NuméroTéléphone>+33 6 12 34 56 78</NuméroTéléphone>
+        <Adresse>
+            <Rue>456 Rue de la Plongée</Rue>
+            <Ville>Marseille</Ville>
+            <CodePostal>13000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationsPersonnelles>
+    <Éducation>
+        <Diplôme>
+            <Titre>Master en Sciences du Sport</Titre>
+            <Institution>Université de Marseille</Institution>
+            <Année>2009</Année>
+        </Diplôme>
+        <Diplôme>
+            <Titre>Certificat en Plongeon Professionnel</Titre>
+            <Institution>École Nationale de Plongeon de Marseille</Institution>
+            <Année>2011</Année>
+        </Diplôme>
+    </Éducation>
+    <Expérience>
+        <Emploi>
+            <Titre>Entraîneur de Plongeon</Titre>
+            <Entreprise>Club de Plongeon de Marseille</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDébut>2012-01</DateDébut>
+            <DateFin>Présent</DateFin>
+            <Responsabilités>
+                <Responsabilité>Enseignement des techniques de plongeon</Responsabilité>
+                <Responsabilité>Développement des compétences et de la confiance des plongeurs</Responsabilité>
+                <Responsabilité>Préparation des plongeurs pour les compétitions nationales et internationales</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+        <Emploi>
+            <Titre>Plongeuse Professionnelle</Titre>
+            <Entreprise>Équipe Nationale de Plongeon</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDébut>2005-01</DateDébut>
+            <DateFin>2011-12</DateFin>
+            <Responsabilités>
+                <Responsabilité>Participation à des compétitions nationales et internationales</Responsabilité>
+                <Responsabilité>Championne nationale de plongeon à plusieurs reprises</Responsabilité>
+                <Responsabilité>Représentation de la France aux Jeux Olympiques</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+    </Expérience>
+    <Certifications>
+        <Certification>
+            <Titre>Certification d'Entraîneur de Plongeon</Titre>
+            <Émetteur>Fédération Française de Natation</Émetteur>
+            <Année>2013</Année>
+        </Certification>
+        <Certification>
+            <Titre>Certification en Premiers Secours Aquatiques</Titre>
+            <Émetteur>Croix-Rouge Française</Émetteur>
+            <Année>2016</Année>
+        </Certification>
+    </Certifications>
+    <Compétences>
+        <Compétence>Techniques avancées de Plongeon</Compétence>
+        <Compétence>Préparation Physique et Mentale</Compétence>
+        <Compétence>Stratégie et Tactique de Compétition</Compétence>
+        <Compétence>Évaluation des Risques et Sécurité Aquatique</Compétence>
+    </Compétences>
+</CoachCV>
