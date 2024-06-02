@@ -52,6 +52,11 @@ CREATE TABLE IF NOT EXISTS Etablissement (
     Salle VARCHAR(255) NOT NULL
 );
 
+INSERT INTO Etablissement (ID, Nom, Sport, Salle)
+VALUES
+(1, 'Le temple', 'Musculation', 'SC210');
+
+
 
 
 
@@ -83,4 +88,3 @@ VALUES
 ('Amelia', 'Taylor', 'projetPiscine/Amelia.png', 'Golf', 'aucune', 'aucune', 'amelia.golf@edu.ece.fr', 'mdpAmelia'),
 ('Sebastian', 'Moore', 'projetPiscine/Sebastian.png', 'Karate', 'aucune', 'aucune', 'sebastian.karate@edu.ece.fr', 'mdpSebastian'),
 ('Grace', 'Jackson', 'projetPiscine/Grace.png', 'Ski', 'aucune', 'aucune', 'grace.ski@edu.ece.fr', 'mdpGrace');
-
