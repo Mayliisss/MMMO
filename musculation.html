@@ -1,3 +1,13 @@
+<?php
+// Démarrer la session
+session_start();
+// Vérifiez si 'idcoach' est défini dans la session
+
+$idcoach=$_SESSION['idcoach'];
+$sport=$_SESSION['sport'];
+?>
+
+
 <!DOCTYPE html>
 <head>
 	<title>Sportify</title>
@@ -166,6 +176,8 @@
  		</button>
  		
 	</nav>
+
+    <a href="ajouterC.html" class="bouton">ajouter</a>
 <hr>
 <p>
 <div>
@@ -189,6 +201,7 @@
 </th>
 </td>
 </table>
+<a href="moncompte.html">Prendre Rdv</a>
 <hr>
     <!-- Footer -->
     <footer>
