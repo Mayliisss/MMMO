@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Administrateur (
     Prenom VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
     MDP VARCHAR(100) NOT NULL,
+    Photo VARCHAR(250) NOT NULL,
     PRIMARY KEY (Email)
 );
 
@@ -60,12 +61,12 @@ VALUES
 
 
 
-INSERT INTO Administrateur (Nom, Prenom, Email, MDP) 
+INSERT INTO Administrateur (Nom, Prenom, Email, MDP, Photo) 
 VALUES 
-('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr', '1234'),
-('Varet', 'Margaux', 'margaux.varet@edu.ece.fr', '1234'),
-('Saveaux', 'Octave', 'Octave.Saveaux@edu.ece.fr', '1234'),
-('Puech', 'Mathis', 'mathis.puech@edu.ece.fr', '1234');
+('Duflot', 'Maylis', 'maylis.duflot@edu.ece.fr', '1234', 'img/coachmaylis.png'),
+('Varet', 'Margaux', 'margaux.varet@edu.ece.fr', '1234', 'img/coachmargaux.png'),
+('Saveaux', 'Octave', 'Octave.Saveaux@edu.ece.fr', '1234', 'img/coachoctave.png'),
+('Puech', 'Mathis', 'mathis.puech@edu.ece.fr', '1234', 'img/coachmathis.png');
 
 INSERT INTO Coach (Prenom, Nom, Photo, Specialité, Video, CV, Email, MDP) 
 VALUES 
