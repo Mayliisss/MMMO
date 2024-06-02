@@ -64,6 +64,7 @@
         <form id="loginForm" action="login.php" method="post">
             <!-- Check if user is logged in -->
             <?php
+            session_start();
                 if(isset($_SESSION['login'])) {
                     // L'utilisateur est connecté, afficher son avatar
                     $avatar_path = ''; // Initialisez le chemin de l'avatar
