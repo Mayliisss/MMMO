@@ -1,238 +1,244 @@
+<?php
+    session_start();
+
+    //identifier le nom de base de données
+    $database = "projetpiscine";
+
+    //connectez-vous dans votre BDD
+    //Rappel : votre serveur = localhost | votre login = root | votre mot de passe = '' (rien)
+    $db_handle = mysqli_connect('localhost', 'root', 'root');
+    $db_found = mysqli_select_db($db_handle, $database);
+
+    //si le BDD existe, faire le traitement
+    if ($db_found) 
+    {
+        if(isset($_POST['button1']))
+        {
+            if(isset($_POST['searchInput'])) 
+            {
+                $searchInput = isset($_POST["searchInput"]) ? $_POST["searchInput"] : "";
+                $resultat_a_afficher = "";
+
+
+                // RECHERCHE COACH
+                $sql = "SELECT * FROM Coach WHERE Nom LIKE '%$searchInput%' OR Prenom LIKE '%$searchInput%' OR Specialité LIKE'%$searchInput%'";
+                $result = mysqli_query($db_handle, $sql);
+
+                if($result)
+                {
+                    while($row = mysqli_fetch_assoc($result)) // Correction de la variable $rows en $row
+                    {
+                        $resultat_a_afficher .= "<div class='result-container'>";
+                        $resultat_a_afficher .= "<p>Nom: " . $row["Nom"]. " - Prénom: " . $row["Prenom"]. "</p>";
+                        $resultat_a_afficher .= "<button class='more-info'>Plus d'informations</button>";
+                        $resultat_a_afficher .= "</div>";
+                    } // Ajout de la parenthèse fermante de la boucle while
+                }
+                else
+                {
+                    echo "Aucun résultat trouvé.";
+                }
+
+
+                //RECHERCHE ETABLISSEMENT
+                $sql = "SELECT * FROM Etablissement WHERE Nom LIKE '%$searchInput%' OR Sport LIKE '%$searchInput%'";
+                $result = mysqli_query($db_handle, $sql);
+
+                if($result)
+                {
+                    while($row = mysqli_fetch_assoc($result)) // Correction de la variable $rows en $row
+                    {
+                        $resultat_a_afficher .= "<div class='result-container'>";
+                        $resultat_a_afficher .= "<p>Nom: " . $row["Nom"]. " - Sport: " . $row["Sport"]. "</p>";
+                        $resultat_a_afficher .= "<button class='more-info'>Plus d'informations</button>";
+                        $resultat_a_afficher .= "</div>";
+                    } // Ajout de la parenthèse fermante de la boucle while
+                }
+                else
+                {
+                    echo "Aucun résultat trouvé.";
+                }
+
+
+
+
+
+
+
+            }
+
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
+<html lang="fr">
 <head>
-	<title>Sportify</title>
     <meta charset="UTF-8">
+    <title>Sportify</title>
     <link rel="stylesheet" href="sportify.css">
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </head>
 <body>
 
-
-<!--Menu coté-->
-
+<!--Menu côté-->
 <div id="mySidenav" class="sidenav">
-  <a id="closeBtn" href="#" class="close">×</a>
-  <ul>
-	<li><a href="#">Accueil</a></li>
-    <li><a href="#">Tout parcourir</a></li>
-    <li><a href="#">Recherche</a></li>
-    <li><a href="#">Rendez-vous</a></li>
-    <li><a href="#">Votre compte</a></li>
-  </ul>
+    <a id="closeBtn" href="#" class="close">×</a>
+    <ul>
+        <li><a href="accueil.html">Accueil</a></li>
+        <li><a href="#">Tout parcourir</a></li>
+        <li><a href="#">Recherche</a></li>
+        <li><a href="#">Rendez-vous</a></li>
+        <li><a href="#">Votre compte</a></li>
+    </ul>
 </div>
 
-
 <!--Burger menu et connexion-->
-
 <a href="#" id="openBtn">
-  <span class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
+    <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
 </a>
 
 <div class="divScore" id="scoreDiv">
-<table border="0">
-    <tr>
-        <td valign="middle">
-            <img src='img/avatar/userGray.png' width="38" style="cursor: pointer;" onclick="afficherDivModal('divUserContainer');" />
-        </td>
-    </tr>
-</table>
-<div class="divThemeContainer" id="divUserContainer">
-    <div class="divThemeHeader">
-        <table width="100%">
-            <tr>
-                <td align="left"><b>Profil</b></td>
-                <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
-            </tr>
-        </table>
-		
-		
-    </div>
-    <div class="divThemeBody">
-        <form id="loginForm" action="login.php" method="post">
-            <!-- Vérifier connexion utilisateur -->
-            <img src="img/avatar/userGray.png" width="38"/>
-            <br>Tu es connecté en tant que <b>Utilisateur</b><br>
-            <button type="button" class="MonButton" onclick="afficherDiv(this,'formUser')">Se connecter</button>
-            <div id="formUser" style="display:none;">
-                <br>Connecte-toi ou crée un nouveu compte !<br>
-                <label for="username">Pseudo (3-10) :</label>
-                <input type="text" id="username" name="username" pattern=".{3,10}" required>
-                <br>
-                <label for="password">Password (3-10) :</label>
-                <input type="password" id="password" name="password" pattern=".{3,10}" required>
-                <br>
-                <div class="divThemeBoxChoice">
-                    <!-- Selection de l'avatar -->
-                    <label>
-                        <img src='img/avatar/1.png' width="50">
-                        <input type="radio" name="avatar" value="1" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/2.png' width="50">
-                        <input type="radio" name="avatar" value="2" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/3.png' width="50">
-                        <input type="radio" name="avatar" value="3" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/4.png' width="50">
-                        <input type="radio" name="avatar" value="4" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/5.png' width="50">
-                        <input type="radio" name="avatar" value="5" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/6.png' width="50">
-                        <input type="radio" name="avatar" value="6" required>
-                    </label>
-                    <label>
-                        <img src='img/avatar/7.png' width="50">
-                        <input type="radio" name="avatar" value="7" required>
-                    </label>											
-                    <!-- Ajouter autant d'options d'avatar que besoin -->
-                </div>
-                <button type="button" class="MonButton" onclick="submitForm()">Login</button>
-            </div>
-        </form>
-
-        <script>
-		    function afficherDiv(button, divId) {
-				var div = document.getElementById(divId);
-				if (div.style.display === "none" || div.style.display === "") {
-					div.style.display = "block";
-				} else {
-					div.style.display = "none";
-				}
-			}
-			
-			function afficherDivModal(divId) {
-				var div = document.getElementById(divId);
-				if (div.style.display === "none" || div.style.display === "") {
-					div.style.display = "block";
-				} else {
-					div.style.display = "none";
-				}
-			}
-	
-            function submitForm() {
-                // Récupérer les valeurs du formulaire
-                var username = document.getElementById('username').value;
-                var password = document.getElementById('password').value;
-                var avatar = document.querySelector("input[name='avatar']:checked").value;
-
-                // Vérifier si les champs sont bien renseignés
-                if (!avatar) {
-                    alert("Veuillez choisir un avatar !");
-                    return;
-                }
-
-                // Vérifier la taille du nom d'utilisateur
-                if (username.length < 3 || username.length > 10) {
-                    alert("Le pseudo doit avoir entre 3 et 10 caractères.");
-                    return;
-                }
-
-                // Vérifier la taille du mot de passe
-                if (password.length < 3 || password.length > 10) {
-                    alert("Le mot de passe doit avoir entre 3 et 10 caractères.");
-                    return;
-                }
-
-                // Envoyer les données au script PHP via AJAX
-                $.ajax({
-                    type: "POST",
-                    url: "login.php",
-                    data: { username: username, password: password, avatar: avatar },
-                    success: function(response) {
-                        // Afficher la réponse du serveur (peut être un message de succès ou d'erreur)
-                        alert(response);
-                        window.location.href = "";
+    <table border="0">
+        <tr>
+            <td valign="middle">
+                <?php
+                if(isset($_SESSION['login'])) {
+                    // L'utilisateur est connecté, afficher son avatar
+                    $avatar_path = ''; // Initialisez le chemin de l'avatar
+                    if(isset($_SESSION['avatar_login'])) {
+                        // Récupérer le chemin de l'avatar depuis la session
+                        $avatar_path = $_SESSION['avatar_login'];
                     }
-                });
+                    echo '<img src="' . $avatar_path . '" width="38" style="cursor: pointer;" onclick="afficherDivModal(\'divUserContainer\');" />';
+                } else {
+                    // L'utilisateur n'est pas connecté, afficher l'avatar par défaut
+                    echo '<img src="img/avatar/userGray.png" width="38" style="cursor: pointer;" onclick="afficherDivModal(\'divUserContainer\');" />';
+                }
+                ?>
+            </td>
+        </tr>
+    </table>
+    <div class="divThemeContainer" id="divUserContainer">
+        <div class="divThemeHeader">
+            <table width="100%">
+                <tr>
+                    <td align="left"><b>Profil</b></td>
+                    <td align="right" style="cursor: pointer;" onclick="document.getElementById('divUserContainer').style.display = 'none';">✖</td>
+                </tr>
+            </table>
+        </div>
+        <div class="divThemeBody">
+        <form id="loginForm" action="login.php" method="post">
+            <!-- Check if user is logged in -->
+            <?php
+                if(isset($_SESSION['login'])) {
+                    // L'utilisateur est connecté, afficher son avatar
+                    $avatar_path = ''; // Initialisez le chemin de l'avatar
+                    if(isset($_SESSION['avatar_login'])) {
+                        // Récupérer le chemin de l'avatar depuis la session
+                        $avatar_path = $_SESSION['avatar_login'];
+                    }
+
+                    echo '<img src="' . $avatar_path . '" width="38"/>';
+                    echo '<br>Tu es connecté en tant que <b>' . $_SESSION['Nom_login']. ' ' .$_SESSION['Prenom_login'].'</b><br>';
+                } else {
+                    // L'utilisateur n'est pas connecté, afficher l'avatar par défaut
+                    echo '<img src="img/avatar/userGray.png" width="38"/>';
+                    echo '<br><b>Tu n es connecté !!</b><br>';
+                    echo '<button type="button" class="MonButton" onclick="redirectToVerifLogin2()">Se connecter</button>';
+                }
+                ?>
+
+
+            <!-- <img src="img/avatar/userGray.png" width="38"/> -->
+            <!-- <br>Tu es connecté en tant que <b>Utilisateur</b><br> -->
+            <!-- <button type="button" class="MonButton" onclick="redirectToVerifLogin2()">Se connecter</button> -->
+
+            <script>
+            function redirectToVerifLogin2() {
+                window.location.href = "verif_login2.php";
             }
+            </script>
+
+
+            
+        </form>
+        <script>
+            function afficherDiv(button, divId) {
+                var div = document.getElementById(divId);
+                if (div.style.display === "none" || div.style.display === "") {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+            }
+            
+            function afficherDivModal(divId) {
+                var div = document.getElementById(divId);
+                if (div.style.display === "none" || div.style.display === "") {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+            }
+    
+            
         </script>
     </div>
-	
-</div>
+    </div>
 </div>
 <!--Fin burger menu et connexion-->
 
-
-
 <!--Début navbar-->
-
-	<nav class="navbar navbar-expand-md">
-		
- 		<!--<a class="navbar-brand" href="#">Logo</a>-->
- 		<center><a href="logo.png"><img src="img/logo.png" class="logo" alt="logo", height=150 width=150></a></center>
- 		<span class="navbar-toggler-icon"></span>
- 		</button>
- 		
-	</nav>
+<nav class="navbar navbar-expand-md">
+    <!--<a class="navbar-brand" href="#">Logo</a>-->
+    <center><a href="logo.png"><img src="img/logo.png" class="logo" alt="logo", height=150 width=150></a></center>
+    <span class="navbar-toggler-icon"></span>
+</nav>
 <hr>
 
 <!--Texte de la page et style-->
-
- <title>Recherche sur le site</title>
-    <style>
-        .search-container {
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .search-results {
-            margin-top: 20px;
-        }
-    </style>
-
+<title>Recherche sur le site</title>
+<style>
+    .search-container {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .search-results {
+        margin-top: 20px;
+    }
+</style>
 
 <!--Barre de recherche dans la BDD-->
-
 <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Rechercher sur le site..." />
-    <button onclick="searchSite()">Rechercher</button>
-    <div class="search-results" id="searchResults"></div>
-</div>
-<script>
-    function searchSite() {
-        const query = document.getElementById('searchInput').value;
-        const resultsContainer = document.getElementById('searchResults');
-        resultsContainer.innerHTML = ''; //Effacer résultats précédents
+    <form action="" method="post">
+        <input type="text" name="searchInput" placeholder="Rechercher sur le site..." />
+        <input type="submit" name="button1" value="Rechercher">
+    </form>
 
-        //Simulation appel dans la BDD
-        fetch('/api/search?q=' + query)
-            .then(response => response.json())
-            .then(data => {
-                if (data.results && data.results.length > 0) {
-                    data.results.forEach(result => {
-                        const resultDiv = document.createElement('div');
-                        resultDiv.textContent = result;
-                        resultsContainer.appendChild(resultDiv);
-                    });
-                } else {
-                    resultsContainer.textContent = 'Aucun résultat trouvé.';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                resultsContainer.textContent = 'Une erreur est survenue lors de la recherche.';
-            });
-    }
-</script>
- 
+    <br>
+    <br>
+
+    <?php 
+        if(isset($resultat_a_afficher)){// si la variable $erreur existe , on affiche le contenu ;
+            echo $resultat_a_afficher  ;
+        }
+    ?>
+</div>
 <hr>
 
-    <!-- Footer -->
-    <footer>
-        
-    </footer>
+<!-- Footer -->
+<footer>
+    
+</footer>
 <script src="sportify.js"></script>
-</BODY>
+</body>
 </html>
