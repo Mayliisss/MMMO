@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CoachCV>
+    <InformationsPersonnelles>
+        <Nom>Thomas Toketchup</Nom>
+        <Email>thomas.toketchup@example.com</Email>
+        <NuméroTéléphone>+33 6 12 34 56 78</NuméroTéléphone>
+        <Adresse>
+            <Rue>456 Rue de la Forme</Rue>
+            <Ville>Paris</Ville>
+            <CodePostal>75000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationsPersonnelles>
+    <Éducation>
+        <Diplôme>
+            <Titre>Master en Sciences du Sport</Titre>
+            <Institution>Université de Paris</Institution>
+            <Année>2013</Année>
+        </Diplôme>
+        <Diplôme>
+            <Titre>Certificat d'Entraîneur de Fitness</Titre>
+            <Institution>Fédération Française de Fitness</Institution>
+            <Année>2015</Année>
+        </Diplôme>
+    </Éducation>
+    <Expérience>
+        <Emploi>
+            <Titre>Entraîneur de Fitness</Titre>
+            <Entreprise>Club de Fitness Parisien</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDébut>2016-01</DateDébut>
+            <DateFin>Présent</DateFin>
+            <Responsabilités>
+                <Responsabilité>Conception et animation de cours collectifs</Responsabilité>
+                <Responsabilité>Entraînement personnel individualisé</Responsabilité>
+                <Responsabilité>Élaboration de programmes de remise en forme</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+        <Emploi>
+            <Titre>Coach Sportif Indépendant</Titre>
+            <Entreprise>Consultation Privée</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDébut>2014-01</DateDébut>
+            <DateFin>2015-12</DateFin>
+            <Responsabilités>
+                <Responsabilité>Accompagnement personnalisé des clients dans l'atteinte de leurs objectifs</Responsabilité>
+                <Responsabilité>Planification d'entraînement adaptée à chaque individu</Responsabilité>
+                <Responsabilité>Évaluation régulière des progrès</Responsabilité>
+            </Responsabilités>
+        </Emploi>
+    </Expérience>
+    <Certifications>
+        <Certification>
+            <Titre>Certification d'Entraîneur de Fitness</Titre>
+            <Émetteur>Fédération Française de Fitness</Émetteur>
+            <Année>2015</Année>
+        </Certification>
+        <Certification>
+            <Titre>Certification en Nutrition Sportive</Titre>
+            <Émetteur>Association Française de Nutrition</Émetteur>
+            <Année>2017</Année>
+        </Certification>
+    </Certifications>
+    <Compétences>
+        <Compétence>Anatomie et physiologie appliquées à l'exercice</Compétence>
+        <Compétence>Connaissance des techniques d'entraînement</Compétence>
+        <Compétence>Planification d'entraînement</Compétence>
+        <Compétence>Nutrition sportive</Compétence>
+    </Compétences>
+</CoachCV>
