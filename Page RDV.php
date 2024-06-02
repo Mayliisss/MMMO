@@ -36,7 +36,7 @@
     $clientID = 3;
     $currentDate = date("Y-m-d");
 
-    $resultat_a_afficher .="$currentDate";
+    
     if (isset($_POST["button1"])) {
        
         if ($db_found) {
@@ -77,32 +77,37 @@
 
     // Si le bouton d'annulation est cliqué
     if (isset($_POST["button3"])) {
+       
         if ($db_found) {
             $clientID = 3; // Remplacer par l'ID réel du client
+            
 
-            // Requête pour obtenir le dernier rendez-vous du client
-            $sql = "SELECT ID FROM rdv WHERE Numero_etudiant = '$clientID' ORDER BY ID DESC LIMIT 1";
-            $result = mysqli_query($db_handle, $sql);
+            $sql = "DELETE FROM rdv WHERE ID_RDV = (
+                    SELECT idToDelete FROM (
+                        SELECT MAX(ID_RDV) as idToDelete 
+                        FROM rdv 
+                        WHERE Numero_etudiant = '3' OR ID_coach='10'
+                    ) as subquery
+                )";
+             $result = mysqli_query($db_handle, $sql);
 
-            if ($result && mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_assoc($result);
-                $idToDelete = $row['ID'];
-
-                // Requête pour supprimer le dernier rendez-vous du client
-                $deleteSql = "DELETE FROM rdv WHERE ID = '$idToDelete'";
-                if (mysqli_query($db_handle, $deleteSql)) {
-                    $message = "Le dernier rendez-vous a été supprimé avec succès.";
-                } else {
-                    $message = "Erreur de suppression : " . mysqli_error($db_handle);
-                }
-            } else {
-                $message = "Aucun rendez-vous à supprimer.";
-            }
+    if ($result) {
+        $affectedRows = mysqli_affected_rows($db_handle);
+        if ($affectedRows > 0) {
+             $resultat_a_afficher="Le dernier rendez-vous a été supprimé avec succès.";
+        } else {
+            $resultat_a_afficher ="Pas de rendez-vous à supprimer.";
+        }
+    } else {
+        echo "Erreur lors de la suppression : " . mysqli_error($db_handle);
+    }
+            
 
             // Fermer la connexion
             mysqli_close($db_handle);
         } 
     }
+   
     ?>
 
 <div id="mySidenav" class="sidenav">
