@@ -1,3 +1,9 @@
+
+<?php
+session_start();
+$idcoach=$_SESSION['idcoach'];
+$sport=$_SESSION['sport'];
+?>
 <!DOCTYPE html>
 <head>
 	<title>Sportify</title>
@@ -190,6 +196,7 @@
 </td>
 </table>
 <div class="button-container">
+	<a href="moncompte.html">Prendre RDV</a>
   <button type="button">Prendre RDV</button>
   <button type="button">Communiquer</button>
   <button type="button">Voir CV</button>
